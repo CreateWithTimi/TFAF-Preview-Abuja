@@ -1,0 +1,14 @@
+.composition-event-information .event-detail-group {
+  inline-size: 100%;
+}
+
+.composition-event-information__body {
+  display: grid;
+  gap: var(--space-3);
+}
+
+@media (min-width: 1024px) {
+  .composition-event-information__body {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  }
+}

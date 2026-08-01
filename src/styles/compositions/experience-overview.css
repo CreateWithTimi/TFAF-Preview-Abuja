@@ -1,0 +1,14 @@
+.composition-experience-overview .experience-sequence {
+  align-items: start;
+}
+
+.composition-experience-overview__summary {
+  display: grid;
+  gap: var(--space-3);
+}
+
+@media (min-width: 1024px) {
+  .composition-experience-overview__summary {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  }
+}

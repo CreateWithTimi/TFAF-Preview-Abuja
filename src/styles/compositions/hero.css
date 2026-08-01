@@ -1,0 +1,50 @@
+.composition-hero {
+  padding-block: var(--space-8);
+}
+
+.composition-hero__heading {
+  font-family: var(--font-family-editorial);
+  font-size: var(--type-display-large-size);
+  line-height: var(--type-display-large-line-height);
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.composition-hero__lead {
+  font-size: var(--type-body-large-size);
+  line-height: var(--type-body-large-line-height);
+  margin: 0;
+  max-inline-size: var(--container-content-max);
+}
+
+.composition-hero--editorial-split .composition__split {
+  align-items: center;
+}
+
+.composition-hero--immersive {
+  background: var(--color-surface-inverse);
+  color: var(--color-text-inverse);
+}
+
+.composition-hero--immersive .composition__content {
+  max-inline-size: var(--container-content-max);
+}
+
+.composition-hero--minimal {
+  padding-block: var(--space-6);
+}
+
+.composition-hero--minimal .composition__content {
+  max-inline-size: var(--container-content-max);
+}
+
+@media (min-width: 1024px) {
+  .composition-hero__heading {
+    font-size: var(--type-display-xl-size);
+    line-height: var(--type-display-xl-line-height);
+  }
+
+  .composition-hero--minimal {
+    padding-block: var(--space-8);
+  }
+}

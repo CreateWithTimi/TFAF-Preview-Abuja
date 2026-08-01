@@ -1,0 +1,7 @@
+.composition-featured-chapter .composition__split {
+  align-items: center;
+}
+
+.composition-featured-chapter .experience-item {
+  max-inline-size: var(--container-content-max);
+}

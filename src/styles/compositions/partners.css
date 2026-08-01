@@ -1,0 +1,8 @@
+.composition-partners .partner-group {
+  inline-size: 100%;
+}
+
+.composition-partners__groups {
+  display: grid;
+  gap: var(--space-3);
+}

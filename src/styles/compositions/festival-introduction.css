@@ -1,0 +1,7 @@
+.composition-festival-introduction .composition__split {
+  align-items: start;
+}
+
+.composition-festival-introduction .editorial-intro {
+  max-inline-size: var(--container-content-max);
+}

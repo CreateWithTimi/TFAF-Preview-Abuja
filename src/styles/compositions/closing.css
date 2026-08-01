@@ -1,0 +1,9 @@
+.composition-closing .composition__content {
+  max-inline-size: var(--container-content-max);
+}
+
+.composition-closing--centered .composition__content {
+  justify-items: center;
+  margin-inline: auto;
+  text-align: center;
+}
