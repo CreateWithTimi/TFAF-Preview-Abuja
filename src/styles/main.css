@@ -1,4 +1,5 @@
-@layer reset, tokens, base, layout, components, compositions, pages, utilities;
+@layer reset, tokens, base, layout, components, content, compositions, pages,
+  utilities;
 
 @import url("./foundations/reset.css") layer(reset);
 @import url("./foundations/tokens.css") layer(tokens);
@@ -17,5 +18,18 @@
 @import url("./components/accordion.css") layer(components);
 @import url("./components/icon-control.css") layer(components);
 @import url("./components/status-label.css") layer(components);
+@import url("./content/eyebrow.css") layer(content);
+@import url("./content/section-header.css") layer(content);
+@import url("./content/editorial-intro.css") layer(content);
+@import url("./content/theme-statement.css") layer(content);
+@import url("./content/quote.css") layer(content);
+@import url("./content/experience.css") layer(content);
+@import url("./content/event-information.css") layer(content);
+@import url("./content/metadata.css") layer(content);
+@import url("./content/context-note.css") layer(content);
+@import url("./content/highlight.css") layer(content);
+@import url("./content/partner-group.css") layer(content);
+@import url("./content/media-placeholder.css") layer(content);
+@import url("./content/cta.css") layer(content);
 @import url("./foundations/utilities.css") layer(utilities);
 @import url("./pages/foundations-reference.css") layer(pages);

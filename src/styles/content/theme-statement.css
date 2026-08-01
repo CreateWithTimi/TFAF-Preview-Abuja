@@ -1,0 +1,50 @@
+.theme-statement {
+  display: grid;
+  gap: var(--space-2);
+  max-inline-size: min(100%, 800px);
+}
+
+.theme-statement--center {
+  justify-items: center;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.theme-statement--inverse {
+  background: var(--color-surface-inverse);
+  color: var(--color-text-inverse);
+  padding: var(--space-4);
+}
+
+.theme-statement__primary {
+  font-family: var(--font-family-editorial);
+  font-size: var(--type-display-small-size);
+  line-height: var(--type-display-small-line-height);
+  margin: 0;
+}
+
+.theme-statement__support {
+  color: var(--color-text-secondary);
+  font-size: var(--type-body-xl-size);
+  line-height: var(--type-body-xl-line-height);
+  margin: 0;
+}
+
+.theme-statement--inverse .theme-statement__support {
+  color: var(--color-text-inverse);
+}
+
+.theme-statement--hero .theme-statement__primary {
+  font-size: var(--type-display-large-size);
+  line-height: var(--type-display-large-line-height);
+}
+
+.theme-statement--featured .theme-statement__primary {
+  font-size: var(--type-heading-1-size);
+  line-height: var(--type-heading-1-line-height);
+}
+
+.theme-statement--compact .theme-statement__primary {
+  font-size: var(--type-heading-2-size);
+  line-height: var(--type-heading-2-line-height);
+}

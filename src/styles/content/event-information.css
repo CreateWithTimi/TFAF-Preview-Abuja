@@ -1,0 +1,83 @@
+/* Design Property Review Required: content/event-detail boolean/text mappings remain under Figma review. */
+.event-detail-group {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.event-detail-group--inverse {
+  background: var(--color-surface-inverse);
+  color: var(--color-text-inverse);
+  padding: var(--space-3);
+}
+
+.event-detail-group--contained {
+  background: var(--color-surface-elevated);
+  border: var(--border-thin) solid var(--color-border-subtle);
+  padding: var(--space-3);
+}
+
+.event-detail {
+  border-block-end: var(--border-thin) solid var(--color-border-subtle);
+  display: grid;
+  gap: var(--space-0-5);
+  min-inline-size: 0;
+  padding-block: var(--space-1);
+}
+
+.event-detail--contained {
+  background: var(--color-surface-elevated);
+  border: var(--border-thin) solid var(--color-border-subtle);
+  padding: var(--space-2);
+}
+
+.event-detail--featured {
+  border-color: var(--color-border-accent);
+}
+
+.event-detail--inverse {
+  background: var(--color-surface-inverse);
+  color: var(--color-text-inverse);
+}
+
+.event-detail__label {
+  color: var(--color-text-secondary);
+  font-size: var(--type-label-small-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--type-label-small-line-height);
+}
+
+.event-detail__value {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.event-detail__note {
+  color: var(--color-text-secondary);
+  font-size: var(--type-body-small-size);
+  line-height: var(--type-body-small-line-height);
+  margin: 0;
+}
+
+.event-detail--inverse .event-detail__label,
+.event-detail--inverse .event-detail__note,
+.event-detail-group--inverse .event-detail__label,
+.event-detail-group--inverse .event-detail__note {
+  color: var(--color-text-inverse);
+}
+
+@media (min-width: 768px) {
+  .event-detail--inline {
+    grid-template-columns: minmax(0, 0.45fr) minmax(0, 1fr);
+  }
+
+  .event-detail-group--two-column {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .event-detail-group--four-column {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
