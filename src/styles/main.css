@@ -1,0 +1,7 @@
+@import "./foundations/reset.css" layer(reset);
+@import "./foundations/tokens.css" layer(tokens);
+@import "./foundations/typography.css" layer(base);
+@import "./foundations/layout.css" layer(layout);
+@import "./foundations/utilities.css" layer(utilities);
+
+@layer reset, tokens, base, layout, components, compositions, pages, utilities;

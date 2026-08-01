@@ -1,0 +1,35 @@
+:root {
+  /* Primitive color values — pending 007.1 mapping */
+
+  /* Semantic surface tokens — pending 007.1 mapping */
+
+  /* Semantic text tokens — pending 007.1 mapping */
+
+  /* Typography families — pending 007.1 mapping */
+
+  /* Typography scale — pending 007.1 mapping */
+
+  /* Spacing scale — pending 007.1 mapping */
+
+  /* Border and radius tokens — pending 007.1 mapping */
+
+  /* Container and breakpoint guidance — pending 007.1 mapping */
+
+  /* Focus tokens — pending 007.1 mapping */
+
+  /* Foundation-only temporary fallbacks. These are not Figma-derived production tokens. */
+  --foundation-color-surface: #ffffff;
+  --foundation-color-text: #1d1d1d;
+  --foundation-color-muted: #5c5c5c;
+  --foundation-color-border: #d8d8d8;
+  --foundation-color-focus: #005fcc;
+  --foundation-font-family:
+    system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", sans-serif;
+  --foundation-space-2: 0.5rem;
+  --foundation-space-3: 0.75rem;
+  --foundation-space-4: 1rem;
+  --foundation-space-6: 1.5rem;
+  --foundation-space-8: 2rem;
+  --foundation-space-12: 3rem;
+  --foundation-container-max: 72rem;
+}
