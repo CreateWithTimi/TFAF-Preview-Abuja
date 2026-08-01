@@ -1,0 +1,49 @@
+.editorial-quote {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  max-inline-size: 600px;
+}
+
+.editorial-quote--default {
+  color: var(--color-text-primary);
+}
+
+.editorial-quote--accented {
+  border-inline-start: var(--border-medium) solid var(--color-border-accent);
+  padding-inline-start: var(--space-2);
+}
+
+.editorial-quote--inverse {
+  background: var(--color-surface-inverse);
+  color: var(--color-text-inverse);
+  padding: var(--space-4);
+}
+
+.editorial-quote__text {
+  font-family: var(--font-family-editorial);
+  font-size: var(--type-quote-size);
+  line-height: var(--type-quote-line-height);
+  margin: 0;
+}
+
+.editorial-quote__text p,
+.editorial-quote__attribution {
+  margin: 0;
+}
+
+.editorial-quote__attribution {
+  color: var(--color-text-secondary);
+  font-size: var(--type-label-default-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--type-label-default-line-height);
+}
+
+.editorial-quote--inverse .editorial-quote__attribution {
+  color: var(--color-text-inverse);
+}
+
+.editorial-quote--large .editorial-quote__text {
+  font-size: var(--type-heading-2-size);
+  line-height: var(--type-heading-2-line-height);
+}

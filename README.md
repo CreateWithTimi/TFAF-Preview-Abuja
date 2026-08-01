@@ -8,7 +8,7 @@ The current public pages are engineering placeholders only. They are not the fin
 
 ## Current Engineering Phase
 
-009.3 — Shared Components
+009.4 — Content Components
 
 ## Technology Stack
 
@@ -21,7 +21,7 @@ The current public pages are engineering placeholders only. They are not the fin
 - Prettier
 - EditorConfig
 
-No React, TypeScript, Tailwind CSS, Sass, CMS, backend, analytics, registration service, or page-section assembly is included in this phase.
+No React, TypeScript, Tailwind CSS, Sass, CMS, backend, analytics, registration service, page-section composition, or public page assembly is included in this phase.
 
 ## Local Installation
 
@@ -29,7 +29,7 @@ No React, TypeScript, Tailwind CSS, Sass, CMS, backend, analytics, registration 
 npm install
 ```
 
-No environment variables are required for 009.3.
+No environment variables are required for 009.4.
 
 ## Development Commands
 
@@ -42,10 +42,11 @@ npm run format
 npm run format:check
 npm run tokens:check
 npm run components:check
+npm run content:check
 npm run check
 ```
 
-`npm run check` runs linting, formatting verification, token validation, component validation, and the production build.
+`npm run check` runs linting, formatting verification, token validation, shared-component validation, content-component validation, and the production build.
 
 ## Route Inventory
 
@@ -60,6 +61,7 @@ Development-only route:
 
 - `/dev/foundations/` — Development foundations reference
 - `/dev/components/` — Development shared-components reference
+- `/dev/content-components/` — Development content-components reference
 
 Development routes are not public festival routes and must not be added to public navigation, footer navigation, sitemap, or public page architecture.
 
@@ -85,14 +87,47 @@ Approved source:
 - Node: `28:2`
 - Node name: `02 Core Components`
 
-Read-only inspection confirmed the 009.3 component scope: buttons, text links, icon buttons, tags/badges, dividers, navigation, accordion, status/feedback labels, and documented component principles. Metadata, event-detail, media, partner-mark, header, and footer code foundations are implemented as reusable website primitives without starting 009.4 page-section composition.
+Read-only inspection confirmed the 009.3 component scope: buttons, text links, icon buttons, tags/badges, dividers, navigation, accordion, status/feedback labels, and documented component principles. Metadata, event-detail, media, partner-mark, header, and footer code foundations are implemented as reusable website primitives without starting section composition.
+
+## Figma Content Components Source
+
+Approved source:
+
+- File: `TFAF`
+- File key: `0z2Eoo0SEXchc3yMRgEWS0`
+- Page: `04 Design System`
+- Node: `47:264`
+- Node name: `03 Content Components`
+
+Verified content families:
+
+- `content/section-header`
+- `content/editorial-intro`
+- `content/eyebrow`
+- `content/theme-statement`
+- `content/quote`
+- `content/experience-item`
+- `content/experience-sequence`
+- `content/event-detail`
+- `content/event-detail-group`
+- `content/metadata-item`
+- `content/metadata-group`
+- `content/context-note`
+- `content/highlight`
+- `content/partner-mark`
+- `content/partner-group`
+- `content/media-placeholder`
+- `content/cta`
+
+The expected FAQ group is absent from node `47:264`; no `content/faq-group` implementation exists in 009.4. Complete FAQ section composition belongs to 009.5.
 
 ## CSS Architecture
 
 Cascade order:
 
 ```css
-@layer reset, tokens, base, layout, components, compositions, pages, utilities;
+@layer reset, tokens, base, layout, components, content, compositions, pages,
+  utilities;
 ```
 
 Primary foundation files:
@@ -121,6 +156,8 @@ Shared component files live in `src/styles/components/` and are imported in the 
 - icon controls
 - status labels
 
+Content component files live in `src/styles/content/` and are imported in the `content` layer. Content styles consume foundation tokens and reuse shared components rather than redefining controls.
+
 ## Token Guidance
 
 009.2 implemented primitive and semantic tokens. 009.3 consumes those existing tokens for shared components and does not introduce final page-composition tokens.
@@ -141,6 +178,12 @@ Run component validation with:
 
 ```sh
 npm run components:check
+```
+
+Run content-component validation with:
+
+```sh
+npm run content:check
 ```
 
 ## Dark-Mode Policy
@@ -228,11 +271,47 @@ WCAG 2.2 AA is the target, not a conformance claim. Foundations include:
 
 Accessibility validation continues during later engineering and QA building blocks.
 
+## Content Component Strategy
+
+Content components are reusable editorial and informational patterns only. They must not hardcode page-level heading levels; heading level is chosen by page context. Reference specimens may use `h2` or `h3` solely to demonstrate structure.
+
+Optional regions are removed from markup when absent. Do not render empty action, media, metadata, attribution, caption, heading, or secondary-action containers.
+
+Content resilience requirements:
+
+- no fixed-height text clipping
+- long headings and descriptions wrap
+- missing optional regions collapse cleanly
+- metadata and partner marks wrap
+- media placeholders preserve approved aspect ratios
+- event details use definition-list semantics
+- inverse surfaces remain readable
+- components remain usable at narrow widths
+
+`content/experience-item` and `content/event-detail` are marked: Structure Implemented, Property Mapping Under Review. Figma notes say boolean/text properties require restoration before final lock.
+
+Registration CTA constraints:
+
+- approved label: `Register Interest`
+- approved note: `Registration details will be confirmed by the organizers.`
+- no `/register/` route
+- no dead `href="#"`
+- no form, countdown, urgency, ticket price, or fake success state
+
+Approved event placeholders for specimens:
+
+- `Date: To be confirmed`
+- `Time: To be confirmed`
+- `Venue: To be confirmed`
+- `Location: Abuja`
+
 ## Progressive Enhancement
 
 HTML provides the primary experience. CSS provides approved global foundations. Public header, footer, navigation links, page content, and Experience chapter anchors are present in the document before JavaScript runs.
 
 The mobile navigation uses an inline-disclosure enhancement: it is visible by default without JavaScript, and `src/scripts/navigation.js` collapses it only after enhancement is initialized. Accordions use native `details` and `summary` so content remains readable without JavaScript.
+
+Content components introduce no new JavaScript. All content-component text, sequencing, media placeholders, event details, partner marks, and CTA placeholders are present in semantic HTML.
 
 ## Shared Header And Footer
 
@@ -277,38 +356,40 @@ build/009-2-design-tokens-global-styles
 For the current phase:
 
 ```text
-build/009-3-shared-components
+build/009-4-content-components
 ```
 
 ## Current Limitations
 
 - Public pages remain engineering placeholders.
-- Shared component foundations have been built, but final page-section composition has not started.
-- Final page assembly, cards, form flows, registration, final media assets, and content components are not implemented.
+- Shared and content component foundations have been built, but final page-section composition has not started.
+- Final page assembly, form flows, registration, final media assets, complete FAQ sections, and section compositions are not implemented.
 - No production image assets, analytics, registration, backend, CMS, Rive, or animation sequences are included.
 - Font files are not yet present locally.
 - Browser and accessibility automation remain future QA work.
 
 ## Suggested Commit Sequence
 
-1. `feat: add shared component primitives`
-2. `feat: integrate shared header and footer shell`
-3. `feat: add mobile navigation enhancement`
-4. `feat: add component reference route`
-5. `test: add component validation audit`
-6. `docs: document shared component foundation`
+1. `feat: add editorial content components`
+2. `feat: add experience and event content patterns`
+3. `feat: add metadata context highlight and partner groups`
+4. `feat: add content CTA and media variants`
+5. `feat: add content component reference route`
+6. `test: add content component audit`
+7. `docs: document content component architecture`
 
-## Definition Of Done For 009.3
+## Definition Of Done For 009.4
 
-- Shared component CSS files exist and import through the components layer.
-- Public route shells use the shared header/footer pattern.
-- Mobile navigation is readable without JavaScript and enhanced only after initialization.
-- Accordion specimens use native disclosure behavior.
-- `/dev/components/` exists and is excluded from public navigation.
-- `npm run components:check` passes.
+- Figma node `47:264` was inspected in read-only mode.
+- Verified content families exist in `src/styles/content/`.
+- `/dev/content-components/` exists and is excluded from public navigation.
+- FAQ group was not invented.
+- Experience Item and Event Detail review status is documented.
+- Optional-region and long-content specimens exist.
+- `npm run content:check` passes.
 - `npm run check` passes.
-- Building Block 009.4 has not started.
+- Building Block 009.5 has not started.
 
 ## Next Building Block
 
-009.4 — Content Components
+009.5 — Section Compositions

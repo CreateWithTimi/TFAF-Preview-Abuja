@@ -14,6 +14,10 @@ export default defineConfig({
         visit: resolve(projectRoot, "visit/index.html"),
         foundations: resolve(projectRoot, "dev/foundations/index.html"),
         components: resolve(projectRoot, "dev/components/index.html"),
+        contentComponents: resolve(
+          projectRoot,
+          "dev/content-components/index.html",
+        ),
       },
     },
   },

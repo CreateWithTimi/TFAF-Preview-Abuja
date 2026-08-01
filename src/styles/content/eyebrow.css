@@ -1,0 +1,36 @@
+.content-eyebrow {
+  color: var(--color-text-secondary);
+  display: inline-flex;
+  font-family: var(--font-family-functional);
+  font-size: var(--type-eyebrow-size);
+  font-weight: var(--font-weight-bold);
+  gap: var(--space-1);
+  letter-spacing: var(--type-eyebrow-letter-spacing);
+  line-height: var(--type-eyebrow-line-height);
+  margin: 0;
+  max-inline-size: 100%;
+  text-transform: uppercase;
+}
+
+.content-eyebrow--accent {
+  color: var(--color-text-accent);
+}
+
+.content-eyebrow--muted {
+  color: var(--color-text-tertiary);
+}
+
+.content-eyebrow--large {
+  font-size: var(--type-label-default-size);
+  line-height: var(--type-label-default-line-height);
+}
+
+.content-eyebrow--compact {
+  font-size: var(--type-label-xs-size);
+  line-height: var(--type-label-xs-line-height);
+}
+
+.surface-inverse .content-eyebrow,
+.content-eyebrow--inverse {
+  color: var(--color-text-inverse);
+}

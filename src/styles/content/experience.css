@@ -1,0 +1,108 @@
+/* Design Property Review Required: content/experience-item boolean/text mappings remain under Figma review. */
+.experience-item {
+  border-color: var(--color-border-subtle);
+  color: var(--color-text-primary);
+  display: grid;
+  gap: var(--space-2);
+  max-inline-size: 100%;
+}
+
+.experience-item--contained {
+  background: var(--color-surface-elevated);
+  border: var(--border-thin) solid var(--color-border-subtle);
+  padding: var(--space-3);
+}
+
+.experience-item--inverse {
+  background: var(--color-surface-inverse);
+  color: var(--color-text-inverse);
+}
+
+.experience-item--featured {
+  border-inline-start: var(--border-medium) solid var(--color-border-accent);
+  padding-inline-start: var(--space-2);
+}
+
+.experience-item__media {
+  order: -1;
+}
+
+.experience-item__content {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.experience-item__number {
+  color: var(--color-text-accent);
+  font-size: var(--type-label-small-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--type-label-small-line-height);
+}
+
+.experience-item--inverse .experience-item__number,
+.experience-item--inverse .experience-item__description,
+.experience-item--inverse .experience-item__meta {
+  color: var(--color-text-inverse);
+}
+
+.experience-item__title {
+  font-family: var(--font-family-editorial);
+  font-size: var(--type-heading-3-size);
+  line-height: var(--type-heading-3-line-height);
+  margin: 0;
+}
+
+.experience-item__description,
+.experience-item__meta {
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.experience-item__action {
+  margin-block-start: var(--space-1);
+}
+
+.experience-item__connector {
+  background: var(--color-border-subtle);
+  block-size: var(--border-thin);
+  inline-size: 100%;
+}
+
+.experience-sequence {
+  display: grid;
+  gap: var(--space-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.experience-sequence--numbered {
+  counter-reset: experience-sequence;
+}
+
+.experience-sequence--numbered > li {
+  counter-increment: experience-sequence;
+}
+
+.experience-sequence--numbered .experience-item__number::before {
+  content: counter(experience-sequence, decimal-leading-zero);
+}
+
+@media (min-width: 768px) {
+  .experience-item--horizontal {
+    align-items: start;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  }
+
+  .experience-item--media-right {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  }
+
+  .experience-item--media-right .experience-item__media {
+    order: 1;
+  }
+
+  .experience-sequence--horizontal {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
