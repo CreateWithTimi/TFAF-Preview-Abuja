@@ -1,0 +1,24 @@
+.event-details {
+  display: grid;
+  gap: var(--space-1);
+  margin: 0;
+}
+
+.event-details__item {
+  border-block-end: var(--border-thin) solid var(--color-border-subtle);
+  display: grid;
+  gap: var(--space-0-5);
+  padding-block: var(--space-1);
+}
+
+.event-details__term {
+  color: var(--color-text-secondary);
+  font-size: var(--type-label-small-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--type-label-small-line-height);
+  margin: 0;
+}
+
+.event-details__description {
+  margin: 0;
+}

@@ -15,8 +15,8 @@
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <!-- Shared shell: keep this header synchronized across all static route files during 009.1. -->
-    <header class="site-header">
+    <!-- Shared shell: keep this header synchronized across all static route files. -->
+    <header class="site-header" data-site-header>
       <div class="page-container site-header__inner">
         <a
           class="site-identity"
@@ -27,21 +27,82 @@
         </a>
         <nav class="primary-navigation" aria-label="Primary navigation">
           <ul class="primary-navigation__list">
-            <li><a href="/festival/">Festival</a></li>
-            <li><a href="/experience/" aria-current="page">Experience</a></li>
-            <li><a href="/visit/">Visit</a></li>
+            <li>
+              <a class="primary-navigation__link" href="/festival/">Festival</a>
+            </li>
+            <li>
+              <a
+                class="primary-navigation__link"
+                href="/experience/"
+                aria-current="page"
+                >Experience</a
+              >
+            </li>
+            <li>
+              <a class="primary-navigation__link" href="/visit/">Visit</a>
+            </li>
           </ul>
         </nav>
-        <p class="registration-placeholder">
-          Register Interest — destination pending
+        <p
+          class="site-header__registration status-label status-label--placeholder"
+        >
+          Register Interest
+          <span class="visually-hidden">destination pending approval</span>
         </p>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-mobile-navigation"
+          data-menu-toggle
+        >
+          <span class="menu-toggle__label">Open menu</span>
+          <span class="menu-toggle__icon" aria-hidden="true"></span>
+        </button>
       </div>
+      <nav
+        class="mobile-navigation"
+        id="primary-mobile-navigation"
+        aria-label="Mobile primary navigation"
+        data-mobile-navigation
+      >
+        <div class="page-container mobile-navigation__inner">
+          <ul class="mobile-navigation__list">
+            <li>
+              <a
+                class="mobile-navigation__link"
+                href="/festival/"
+                data-menu-link
+                >Festival</a
+              >
+            </li>
+            <li>
+              <a
+                class="mobile-navigation__link"
+                href="/experience/"
+                aria-current="page"
+                data-menu-link
+                >Experience</a
+              >
+            </li>
+            <li>
+              <a class="mobile-navigation__link" href="/visit/" data-menu-link
+                >Visit</a
+              >
+            </li>
+          </ul>
+          <p class="status-label status-label--placeholder">
+            Register Interest
+            <span class="visually-hidden">destination pending approval</span>
+          </p>
+        </div>
+      </nav>
     </header>
 
     <main id="main-content">
       <section class="page-section">
         <div class="page-container page-stack">
-          <h1>The Experience</h1>
+          <h1 class="type-heading-1">The Experience</h1>
           <nav class="chapter-navigation" aria-label="Experience chapters">
             <ol class="chapter-navigation__list">
               <li>
@@ -80,46 +141,61 @@
 
       <section class="page-section chapter-placeholder" id="chapter-01">
         <div class="page-container">
-          <h2>01 — Arrival &amp; Cultural Immersion</h2>
+          <h2 class="type-heading-2">01 — Arrival &amp; Cultural Immersion</h2>
         </div>
       </section>
       <section class="page-section chapter-placeholder" id="chapter-02">
         <div class="page-container">
-          <h2>02 — Memory Wall</h2>
+          <h2 class="type-heading-2">02 — Memory Wall</h2>
         </div>
       </section>
       <section class="page-section chapter-placeholder" id="chapter-03">
         <div class="page-container">
-          <h2>03 — Centre for Memories</h2>
+          <h2 class="type-heading-2">03 — Centre for Memories</h2>
         </div>
       </section>
       <section class="page-section chapter-placeholder" id="chapter-04">
         <div class="page-container">
-          <h2>04 — Theme Conversation</h2>
+          <h2 class="type-heading-2">04 — Theme Conversation</h2>
         </div>
       </section>
       <section class="page-section chapter-placeholder" id="chapter-05">
         <div class="page-container">
-          <h2>05 — Clan Wars</h2>
+          <h2 class="type-heading-2">05 — Clan Wars</h2>
         </div>
       </section>
       <section class="page-section chapter-placeholder" id="chapter-06">
         <div class="page-container">
-          <h2>06 — Learn the Dance</h2>
+          <h2 class="type-heading-2">06 — Learn the Dance</h2>
         </div>
       </section>
       <section class="page-section chapter-placeholder" id="chapter-07">
         <div class="page-container">
-          <h2>07 — Books &amp; Merchandise</h2>
+          <h2 class="type-heading-2">07 — Books &amp; Merchandise</h2>
         </div>
       </section>
     </main>
 
-    <!-- Shared shell: keep this footer synchronized across all static route files during 009.1. -->
+    <!-- Shared shell: keep this footer synchronized across all static route files. -->
     <footer class="site-footer">
-      <div class="page-container">
-        <p>Things Fall Apart Festival — Abuja Preview Experience</p>
-        <p>Engineering placeholder content only.</p>
+      <div class="page-container site-footer__inner">
+        <p class="site-footer__title">
+          Things Fall Apart Festival — Abuja Preview Experience
+        </p>
+        <nav class="footer-navigation" aria-label="Footer navigation">
+          <ul class="footer-navigation__list">
+            <li>
+              <a class="footer-navigation__link" href="/festival/">Festival</a>
+            </li>
+            <li>
+              <a class="footer-navigation__link" href="/experience/"
+                >Experience</a
+              >
+            </li>
+            <li><a class="footer-navigation__link" href="/visit/">Visit</a></li>
+          </ul>
+        </nav>
+        <p class="site-footer__note">Engineering placeholder content only.</p>
       </div>
     </footer>
 

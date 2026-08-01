@@ -1,16 +1,16 @@
 export function initializeAccordions() {
-  const triggers = document.querySelectorAll("[data-accordion-trigger]");
+  const accordions = document.querySelectorAll("[data-accordion]");
 
-  // TODO: Implement accordion behavior in the future interaction building block.
-  if (triggers.length === 0) {
+  // TODO: Add optional analytics or advanced accordion instrumentation in a future approved building block.
+  if (accordions.length === 0) {
     return;
   }
 
-  triggers.forEach((trigger) => {
-    if (trigger.dataset.initialized === "true") {
+  accordions.forEach((accordion) => {
+    if (accordion.dataset.initialized === "true") {
       return;
     }
 
-    trigger.dataset.initialized = "true";
+    accordion.dataset.initialized = "true";
   });
 }

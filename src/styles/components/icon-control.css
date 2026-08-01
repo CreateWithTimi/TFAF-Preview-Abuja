@@ -1,0 +1,34 @@
+.icon-control {
+  align-items: center;
+  background: transparent;
+  border: var(--border-thin) solid var(--color-border-default);
+  border-radius: var(--radius-medium);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  display: inline-flex;
+  inline-size: 44px;
+  justify-content: center;
+  min-block-size: 44px;
+}
+
+.icon-control--large {
+  inline-size: 56px;
+  min-block-size: 56px;
+}
+
+.icon-control--accent {
+  background: var(--color-interactive-primary);
+  border-color: var(--color-interactive-primary);
+  color: var(--color-text-on-accent);
+}
+
+.icon-control:focus-visible {
+  outline: var(--border-medium) solid var(--color-border-focus);
+  outline-offset: var(--space-0-5);
+}
+
+.icon-control[disabled] {
+  background: var(--color-interactive-disabled);
+  color: var(--color-interactive-disabled-text);
+  cursor: not-allowed;
+}

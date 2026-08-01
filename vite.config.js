@@ -12,6 +12,8 @@ export default defineConfig({
         festival: resolve(projectRoot, "festival/index.html"),
         experience: resolve(projectRoot, "experience/index.html"),
         visit: resolve(projectRoot, "visit/index.html"),
+        foundations: resolve(projectRoot, "dev/foundations/index.html"),
+        components: resolve(projectRoot, "dev/components/index.html"),
       },
     },
   },

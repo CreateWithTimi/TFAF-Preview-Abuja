@@ -1,0 +1,30 @@
+.site-header {
+  background: var(--color-surface-default);
+  border-block-end: var(--border-thin) solid var(--color-border-subtle);
+}
+
+.site-header__inner {
+  align-items: center;
+  display: flex;
+  gap: var(--space-2);
+  justify-content: space-between;
+  min-height: 72px;
+}
+
+.site-identity {
+  border-radius: var(--radius-small);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-editorial);
+  font-size: var(--type-heading-4-size);
+  line-height: var(--type-heading-4-line-height);
+  text-decoration: none;
+}
+
+.site-identity:focus-visible {
+  outline: var(--border-medium) solid var(--color-border-focus);
+  outline-offset: var(--space-0-5);
+}
+
+.site-header__registration {
+  margin: 0;
+}

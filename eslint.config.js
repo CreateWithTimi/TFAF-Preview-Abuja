@@ -6,7 +6,7 @@ export default [
   },
   js.configs.recommended,
   {
-    files: ["src/**/*.js", "*.config.js"],
+    files: ["src/**/*.js", "scripts/**/*.mjs", "*.config.js"],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
@@ -17,6 +17,7 @@ export default [
         NodeList: "readonly",
         URL: "readonly",
         console: "readonly",
+        process: "readonly",
       },
     },
     rules: {
