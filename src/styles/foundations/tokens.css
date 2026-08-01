@@ -1,35 +1,370 @@
 :root {
-  /* Primitive color values — pending 007.1 mapping */
+  /* 009.2 Figma source: 04 Design System / 01 Foundations, node 22:184. */
 
-  /* Semantic surface tokens — pending 007.1 mapping */
+  /* Primitive colour tokens: 01 Color Primitives. */
+  --warm-neutral-50: #fcfaf7;
+  --warm-neutral-100: #f7f4ef;
+  --warm-neutral-200: #ede8e0;
+  --warm-neutral-300: #ded7cc;
+  --warm-neutral-400: #c4baac;
+  --warm-neutral-500: #a39888;
+  --warm-neutral-600: #827869;
+  --warm-neutral-700: #61594d;
+  --warm-neutral-800: #423c34;
+  --warm-neutral-900: #292520;
+  --warm-neutral-950: #1a1714;
+  --umber-50: #faf3ed;
+  --umber-100: #f4e8db;
+  --umber-200: #e8d0b8;
+  --umber-300: #d6b08c;
+  --umber-400: #c18e62;
+  --umber-500: #ad7243;
+  --umber-600: #945a30;
+  --umber-700: #7a4826;
+  --umber-800: #613920;
+  --umber-900: #4d2e1c;
+  --umber-950: #331c0f;
+  --bronze-50: #fcf8ed;
+  --bronze-100: #f8f0d8;
+  --bronze-200: #f1e0b1;
+  --bronze-300: #e7cb83;
+  --bronze-400: #dab35b;
+  --bronze-500: #c89b3c;
+  --bronze-600: #ac802a;
+  --bronze-700: #8c6422;
+  --bronze-800: #735120;
+  --bronze-900: #5f431e;
+  --bronze-950: #37250e;
+  --green-50: #f0f9f4;
+  --green-300: #74cc9c;
+  --green-500: #228b54;
+  --green-900: #0c3822;
+  --amber-50: #fffbeb;
+  --amber-300: #fcd366;
+  --amber-500: #d9a811;
+  --amber-900: #634707;
+  --red-50: #fef2f2;
+  --red-300: #f39999;
+  --red-500: #dc3535;
+  --red-900: #631212;
+  --blue-50: #eff6ff;
+  --blue-300: #92bbef;
+  --blue-500: #337ace;
+  --blue-900: #13335e;
+  --pure-white: #ffffff;
+  --pure-black: #000000;
 
-  /* Semantic text tokens — pending 007.1 mapping */
+  /* Semantic colour tokens: 02 Color Semantic, Light mode. */
+  --color-background-page: var(--warm-neutral-50);
+  --color-background-subtle: var(--warm-neutral-100);
+  --color-background-strong: var(--warm-neutral-200);
+  --color-background-inverse: var(--warm-neutral-950);
+  --color-background-accent: var(--umber-500);
+  --color-surface-default: var(--warm-neutral-50);
+  --color-surface-subtle: var(--warm-neutral-50);
+  --color-surface-elevated: var(--pure-white);
+  --color-surface-overlay: var(--warm-neutral-200);
+  --color-surface-inverse: var(--warm-neutral-950);
+  --color-surface-accent: var(--umber-50);
+  --color-text-primary: var(--warm-neutral-950);
+  --color-text-secondary: var(--warm-neutral-700);
+  --color-text-tertiary: var(--warm-neutral-500);
+  --color-text-inverse: var(--warm-neutral-50);
+  --color-text-accent: var(--umber-700);
+  --color-text-link: var(--umber-600);
+  --color-text-disabled: var(--warm-neutral-400);
+  --color-text-on-accent: var(--warm-neutral-50);
+  --color-border-subtle: var(--warm-neutral-200);
+  --color-border-default: var(--warm-neutral-300);
+  --color-border-strong: var(--warm-neutral-500);
+  --color-border-accent: var(--umber-500);
+  --color-border-focus: var(--umber-600);
+  --color-border-error: var(--red-900);
+  --color-interactive-primary: var(--umber-600);
+  --color-interactive-primary-hover: var(--umber-700);
+  --color-interactive-primary-active: var(--umber-800);
+  --color-interactive-secondary: var(--warm-neutral-200);
+  --color-interactive-secondary-hover: var(--warm-neutral-300);
+  --color-interactive-secondary-active: var(--warm-neutral-400);
+  --color-interactive-disabled: var(--warm-neutral-300);
+  --color-interactive-disabled-text: var(--warm-neutral-400);
+  --color-feedback-success: var(--green-900);
+  --color-feedback-success-subtle: var(--green-50);
+  --color-feedback-warning: var(--amber-900);
+  --color-feedback-warning-subtle: var(--amber-50);
+  --color-feedback-error: var(--red-900);
+  --color-feedback-error-subtle: var(--red-50);
+  --color-feedback-information: var(--blue-900);
+  --color-feedback-information-subtle: var(--blue-50);
 
-  /* Typography families — pending 007.1 mapping */
+  /* Typography families. Production WOFF2 files are pending. */
+  --font-family-editorial: "DM Serif Display", Georgia, serif;
+  --font-family-functional:
+    "DM Sans", system-ui, -apple-system, blinkmacsystemfont, "Segoe UI",
+    sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
 
-  /* Typography scale — pending 007.1 mapping */
+  /* Typography scale defaults are mobile-first, then overridden at tablet and desktop ranges. */
+  --type-display-xl-size: 48px;
+  --type-display-xl-line-height: 56px;
+  --type-display-xl-letter-spacing: -0.96px;
+  --type-display-large-size: 40px;
+  --type-display-large-line-height: 48px;
+  --type-display-large-letter-spacing: -0.8px;
+  --type-display-medium-size: 36px;
+  --type-display-medium-line-height: 44px;
+  --type-display-medium-letter-spacing: -0.72px;
+  --type-display-small-size: 32px;
+  --type-display-small-line-height: 40px;
+  --type-display-small-letter-spacing: -0.64px;
+  --type-heading-1-size: 32px;
+  --type-heading-1-line-height: 40px;
+  --type-heading-1-letter-spacing: -0.64px;
+  --type-heading-2-size: 28px;
+  --type-heading-2-line-height: 36px;
+  --type-heading-2-letter-spacing: -0.56px;
+  --type-heading-3-size: 22px;
+  --type-heading-3-line-height: 30px;
+  --type-heading-3-letter-spacing: -0.44px;
+  --type-heading-4-size: 18px;
+  --type-heading-4-line-height: 26px;
+  --type-heading-4-letter-spacing: -0.18px;
+  --type-body-xl-size: 18px;
+  --type-body-xl-line-height: 28px;
+  --type-body-large-size: 17px;
+  --type-body-large-line-height: 26px;
+  --type-body-default-size: 16px;
+  --type-body-default-line-height: 24px;
+  --type-body-small-size: 14px;
+  --type-body-small-line-height: 20px;
+  --type-body-xs-size: 12px;
+  --type-body-xs-line-height: 16px;
+  --type-label-large-size: 16px;
+  --type-label-large-line-height: 20px;
+  --type-label-large-letter-spacing: 0.32px;
+  --type-label-default-size: 14px;
+  --type-label-default-line-height: 18px;
+  --type-label-default-letter-spacing: 0.28px;
+  --type-label-small-size: 12px;
+  --type-label-small-line-height: 16px;
+  --type-label-small-letter-spacing: 0.48px;
+  --type-label-xs-size: 10px;
+  --type-label-xs-line-height: 14px;
+  --type-label-xs-letter-spacing: 0.6px;
+  --type-caption-size: 12px;
+  --type-caption-line-height: 16px;
+  --type-caption-letter-spacing: 0.24px;
+  --type-eyebrow-size: 11px;
+  --type-eyebrow-line-height: 14px;
+  --type-eyebrow-letter-spacing: 1.2px;
+  --type-overline-size: 10px;
+  --type-overline-line-height: 14px;
+  --type-overline-letter-spacing: 1px;
+  --type-quote-size: 24px;
+  --type-quote-line-height: 36px;
+  --type-quote-letter-spacing: -0.24px;
 
-  /* Spacing scale — pending 007.1 mapping */
+  /* Spacing: Figma fractional names map space/0_5 -> --space-0-5, etc. */
+  --space-0: 0;
+  --space-0-5: 4px;
+  --space-1: 8px;
+  --space-1-5: 12px;
+  --space-2: 16px;
+  --space-2-5: 20px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-7: 56px;
+  --space-8: 64px;
+  --space-10: 80px;
+  --space-12: 96px;
+  --space-15: 120px;
+  --space-16: 128px;
+  --space-20: 160px;
 
-  /* Border and radius tokens — pending 007.1 mapping */
+  --radius-none: 0;
+  --radius-small: 4px;
+  --radius-medium: 8px;
+  --radius-large: 16px;
+  --radius-xlarge: 24px;
+  --radius-pill: 999px;
 
-  /* Container and breakpoint guidance — pending 007.1 mapping */
+  --border-none: 0;
+  --border-thin: 1px;
+  --border-medium: 2px;
+  --border-strong: 3px;
 
-  /* Focus tokens — pending 007.1 mapping */
+  --elevation-none: none;
+  --elevation-subtle:
+    0 1px 3px rgb(26 20 15 / 6%), 0 2px 6px rgb(26 20 15 / 4%);
+  --elevation-medium:
+    0 4px 12px rgb(26 20 15 / 8%), 0 1px 3px rgb(26 20 15 / 4%);
+  --elevation-floating:
+    0 12px 28px -4px rgb(26 20 15 / 14%), 0 4px 8px rgb(26 20 15 / 6%);
 
-  /* Foundation-only temporary fallbacks. These are not Figma-derived production tokens. */
-  --foundation-color-surface: #ffffff;
-  --foundation-color-text: #1d1d1d;
-  --foundation-color-muted: #5c5c5c;
-  --foundation-color-border: #d8d8d8;
-  --foundation-color-focus: #005fcc;
-  --foundation-font-family:
-    system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", sans-serif;
-  --foundation-space-2: 0.5rem;
-  --foundation-space-3: 0.75rem;
-  --foundation-space-4: 1rem;
-  --foundation-space-6: 1.5rem;
-  --foundation-space-8: 2rem;
-  --foundation-space-12: 3rem;
-  --foundation-container-max: 72rem;
+  --duration-instant: 0ms;
+  --duration-fast: 150ms;
+  --duration-default: 250ms;
+  --duration-slow: 400ms;
+  --duration-editorial: 700ms;
+  --easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --easing-entrance: cubic-bezier(0, 0, 0.2, 1);
+  --easing-exit: cubic-bezier(0.4, 0, 1, 1);
+  --easing-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-distance-small: 8px;
+  --motion-distance-medium: 16px;
+  --motion-distance-large: 32px;
+
+  --breakpoint-mobile-max: 767px;
+  --breakpoint-tablet-min: 768px;
+  --breakpoint-tablet-max: 1023px;
+  --breakpoint-desktop-min: 1024px;
+  --breakpoint-wide-min: 1440px;
+  --reference-width-mobile: 375px;
+  --reference-width-tablet: 768px;
+  --reference-width-desktop: 1440px;
+  --grid-columns: 4;
+  --grid-gutter: 16px;
+  --page-gutter: 20px;
+  --container-page-max: 1312px;
+  --container-content-max: 780px;
+  --container-narrow-max: 540px;
+  --container-form-max: 480px;
+  --grid-desktop-columns: 12;
+  --grid-desktop-gutter: 24px;
+  --grid-desktop-margin: 64px;
+  --grid-desktop-content: 1312px;
+  --grid-tablet-columns: 8;
+  --grid-tablet-gutter: 16px;
+  --grid-tablet-margin: 40px;
+  --grid-tablet-content: 688px;
+  --grid-mobile-columns: 4;
+  --grid-mobile-gutter: 16px;
+  --grid-mobile-margin: 20px;
+  --grid-mobile-content: 335px;
+}
+
+[data-theme="dark"] {
+  --color-background-page: var(--warm-neutral-950);
+  --color-background-subtle: var(--warm-neutral-900);
+  --color-background-strong: var(--warm-neutral-800);
+  --color-background-inverse: var(--warm-neutral-50);
+  --color-background-accent: var(--umber-400);
+  --color-surface-default: var(--warm-neutral-900);
+  --color-surface-subtle: var(--warm-neutral-800);
+  --color-surface-elevated: var(--warm-neutral-700);
+  --color-surface-overlay: var(--warm-neutral-800);
+  --color-surface-inverse: var(--warm-neutral-50);
+  --color-surface-accent: var(--umber-900);
+  --color-text-primary: var(--warm-neutral-50);
+  --color-text-secondary: var(--warm-neutral-300);
+  --color-text-tertiary: var(--warm-neutral-400);
+  --color-text-inverse: var(--warm-neutral-950);
+  --color-text-accent: var(--umber-300);
+  --color-text-link: var(--umber-300);
+  --color-text-disabled: var(--warm-neutral-600);
+  --color-text-on-accent: var(--warm-neutral-950);
+  --color-border-subtle: var(--warm-neutral-800);
+  --color-border-default: var(--warm-neutral-700);
+  --color-border-strong: var(--warm-neutral-400);
+  --color-border-accent: var(--umber-400);
+  --color-border-focus: var(--umber-300);
+  --color-border-error: var(--red-300);
+  --color-interactive-primary: var(--umber-400);
+  --color-interactive-primary-hover: var(--umber-300);
+  --color-interactive-primary-active: var(--umber-200);
+  --color-interactive-secondary: var(--warm-neutral-800);
+  --color-interactive-secondary-hover: var(--warm-neutral-700);
+  --color-interactive-secondary-active: var(--warm-neutral-600);
+  --color-interactive-disabled: var(--warm-neutral-700);
+  --color-interactive-disabled-text: var(--warm-neutral-600);
+  --color-feedback-success: var(--green-300);
+  --color-feedback-success-subtle: var(--green-900);
+  --color-feedback-warning: var(--amber-300);
+  --color-feedback-warning-subtle: var(--amber-900);
+  --color-feedback-error: var(--red-300);
+  --color-feedback-error-subtle: var(--red-900);
+  --color-feedback-information: var(--blue-300);
+  --color-feedback-information-subtle: var(--blue-900);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --type-display-xl-size: 64px;
+    --type-display-xl-line-height: 72px;
+    --type-display-xl-letter-spacing: -1.28px;
+    --type-display-large-size: 52px;
+    --type-display-large-line-height: 60px;
+    --type-display-large-letter-spacing: -1.04px;
+    --type-display-medium-size: 40px;
+    --type-display-medium-line-height: 48px;
+    --type-display-medium-letter-spacing: -0.8px;
+    --type-display-small-size: 34px;
+    --type-display-small-line-height: 42px;
+    --type-display-small-letter-spacing: -0.68px;
+    --type-heading-1-size: 36px;
+    --type-heading-1-line-height: 44px;
+    --type-heading-1-letter-spacing: -0.72px;
+    --type-heading-2-size: 30px;
+    --type-heading-2-line-height: 38px;
+    --type-heading-2-letter-spacing: -0.6px;
+    --type-heading-3-size: 24px;
+    --type-heading-3-line-height: 32px;
+    --type-heading-3-letter-spacing: -0.48px;
+    --type-heading-4-size: 20px;
+    --type-heading-4-line-height: 28px;
+    --type-heading-4-letter-spacing: -0.2px;
+    --type-body-xl-size: 20px;
+    --type-body-xl-line-height: 30px;
+    --type-body-large-size: 18px;
+    --type-body-large-line-height: 28px;
+    --grid-columns: 8;
+    --grid-gutter: 16px;
+    --page-gutter: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --type-display-xl-size: 80px;
+    --type-display-xl-line-height: 88px;
+    --type-display-xl-letter-spacing: -1.6px;
+    --type-display-large-size: 64px;
+    --type-display-large-line-height: 72px;
+    --type-display-large-letter-spacing: -1.28px;
+    --type-display-medium-size: 48px;
+    --type-display-medium-line-height: 56px;
+    --type-display-medium-letter-spacing: -0.96px;
+    --type-display-small-size: 36px;
+    --type-display-small-line-height: 44px;
+    --type-display-small-letter-spacing: -0.72px;
+    --type-heading-1-size: 40px;
+    --type-heading-1-line-height: 48px;
+    --type-heading-1-letter-spacing: -0.8px;
+    --type-heading-2-size: 32px;
+    --type-heading-2-line-height: 40px;
+    --type-heading-2-letter-spacing: -0.64px;
+    --type-heading-3-size: 24px;
+    --type-heading-3-line-height: 32px;
+    --type-heading-3-letter-spacing: -0.48px;
+    --type-heading-4-size: 20px;
+    --type-heading-4-line-height: 28px;
+    --type-heading-4-letter-spacing: -0.2px;
+    --type-body-xl-size: 20px;
+    --type-body-xl-line-height: 32px;
+    --type-body-large-size: 18px;
+    --type-body-large-line-height: 28px;
+    --grid-columns: 12;
+    --grid-gutter: 24px;
+    --page-gutter: 48px;
+  }
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --page-gutter: 64px;
+  }
 }

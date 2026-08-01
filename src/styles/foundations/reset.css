@@ -6,6 +6,8 @@
 
 html {
   min-height: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -17,9 +19,20 @@ img,
 picture,
 svg,
 video,
-canvas {
+canvas,
+audio,
+iframe,
+embed,
+object {
   display: block;
   max-width: 100%;
+}
+
+img,
+picture,
+video,
+canvas {
+  height: auto;
 }
 
 input,
@@ -27,10 +40,26 @@ button,
 textarea,
 select {
   font: inherit;
+  letter-spacing: inherit;
 }
 
-button {
+button,
+[role="button"] {
   cursor: pointer;
+}
+
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+  cursor: not-allowed;
+}
+
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
 }
 
 [hidden] {

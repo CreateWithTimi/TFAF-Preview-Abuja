@@ -1,20 +1,92 @@
 .skip-link {
   position: absolute;
   z-index: 10;
-  inset-block-start: var(--foundation-space-4);
-  inset-inline-start: var(--foundation-space-4);
-  padding: var(--foundation-space-2) var(--foundation-space-3);
-  background: var(--foundation-color-surface);
-  color: var(--foundation-color-text);
-  outline: 2px solid var(--foundation-color-focus);
-  transform: translateY(calc(-100% - var(--foundation-space-8)));
+  inset-block-start: var(--space-2);
+  inset-inline-start: var(--space-2);
+  padding: var(--space-1) var(--space-1-5);
+  background: var(--color-surface-elevated);
+  color: var(--color-text-primary);
+  outline: var(--border-medium) solid var(--color-border-focus);
+  outline-offset: 2px;
+  transform: translateY(calc(-100% - var(--space-8)));
 }
 
-.skip-link:focus {
+.skip-link:focus,
+.skip-link:focus-visible {
   transform: translateY(0);
 }
 
 :focus-visible {
-  outline: 2px solid var(--foundation-color-focus);
-  outline-offset: 0.2rem;
+  outline: var(--border-medium) solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.surface-default {
+  background: var(--color-surface-default);
+  color: var(--color-text-primary);
+}
+
+.surface-subtle {
+  background: var(--color-surface-subtle);
+  color: var(--color-text-primary);
+}
+
+.surface-elevated {
+  background: var(--color-surface-elevated);
+  color: var(--color-text-primary);
+}
+
+.surface-inverse {
+  background: var(--color-surface-inverse);
+  color: var(--color-text-inverse);
+}
+
+.surface-accent {
+  background: var(--color-background-accent);
+  color: var(--color-text-on-accent);
+}
+
+.surface-inverse a,
+.surface-accent a {
+  color: currentcolor;
+}
+
+.feedback-success,
+.feedback-warning,
+.feedback-error,
+.feedback-information {
+  border: var(--border-thin) solid currentcolor;
+  padding: var(--space-2);
+}
+
+.feedback-success {
+  background: var(--color-feedback-success-subtle);
+  color: var(--color-feedback-success);
+}
+
+.feedback-warning {
+  background: var(--color-feedback-warning-subtle);
+  color: var(--color-feedback-warning);
+}
+
+.feedback-error {
+  background: var(--color-feedback-error-subtle);
+  color: var(--color-feedback-error);
+}
+
+.feedback-information {
+  background: var(--color-feedback-information-subtle);
+  color: var(--color-feedback-information);
 }

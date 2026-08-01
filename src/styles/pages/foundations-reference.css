@@ -1,0 +1,102 @@
+.foundations-reference-page {
+  --flow-space: var(--space-3);
+}
+
+.fr-section {
+  padding-block: var(--space-6);
+  border-block-start: var(--border-thin) solid var(--color-border-subtle);
+}
+
+.fr-swatch-grid,
+.fr-specimen-grid,
+.fr-surface-grid,
+.fr-feedback-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  gap: var(--space-2);
+}
+
+.fr-swatch,
+.fr-token-pill,
+.fr-surface,
+.fr-radius,
+.fr-border,
+.fr-elevation,
+.fr-container-demo,
+.fr-measure,
+.fr-focus-target {
+  overflow-wrap: anywhere;
+  padding: var(--space-2);
+  border: var(--border-thin) solid var(--color-border-subtle);
+}
+
+.fr-swatch::before {
+  display: block;
+  min-block-size: 5rem;
+  margin-block-end: var(--space-1);
+  background: var(--swatch, transparent);
+  border: var(--border-thin) solid var(--color-border-subtle);
+  content: "";
+}
+
+.fr-token-pill {
+  background: var(--color-surface-subtle);
+}
+
+.fr-surface {
+  min-block-size: 8rem;
+}
+
+.fr-dark-specimen {
+  padding: var(--space-4);
+  background: var(--color-background-page);
+  color: var(--color-text-primary);
+  border: var(--border-thin) solid var(--color-border-default);
+}
+
+.fr-spacing-list {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.fr-spacing-list span {
+  display: grid;
+  grid-template-columns: minmax(8rem, 12rem) 1fr;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.fr-spacing-list span::after {
+  display: block;
+  inline-size: var(--space-demo, 0);
+  block-size: var(--space-2);
+  background: var(--color-background-accent);
+  content: "";
+}
+
+.fr-container-demo {
+  margin-inline: 0;
+  background: var(--color-surface-subtle);
+}
+
+.fr-radius,
+.fr-border,
+.fr-elevation {
+  min-block-size: 6rem;
+  background: var(--color-surface-elevated);
+}
+
+.fr-border {
+  border-style: solid;
+  border-color: var(--color-border-accent);
+}
+
+.fr-focus-target {
+  display: inline-block;
+}
+
+@media (max-width: 374px) {
+  .fr-section {
+    padding-block: var(--space-4);
+  }
+}

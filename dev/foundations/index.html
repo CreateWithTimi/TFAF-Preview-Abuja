@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Development Foundations | Things Fall Apart Festival</title>
+    <meta
+      name="description"
+      content="Development-only design-token reference for the Things Fall Apart Festival Abuja Preview Experience."
+    />
+    <!-- Development reference route only. Do not add a canonical URL. -->
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body class="foundations-reference-page">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="page-container site-header__inner">
+        <a
+          class="site-identity"
+          href="/"
+          aria-label="Things Fall Apart Festival home"
+        >
+          Things Fall Apart Festival
+        </a>
+        <p class="registration-placeholder">
+          Development Reference — Not a Public Festival Page
+        </p>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="fr-section">
+        <div class="container flow">
+          <p class="type-eyebrow">009.2 Foundations</p>
+          <h1 class="type-display-medium">
+            Development Reference — Not a Public Festival Page
+          </h1>
+          <p class="type-body-large text-measure-default">
+            This route verifies approved Figma foundation values in production
+            CSS. It is not part of the public festival page architecture.
+          </p>
+        </div>
+      </section>
+
+      <section class="fr-section" aria-labelledby="overview">
+        <div class="container flow">
+          <h2 id="overview">Overview</h2>
+          <p class="text-measure-default">
+            Source: Figma file <code>TFAF</code>, node <code>22:184</code>, “01
+            Foundations” inside “04 Design System.”
+          </p>
+        </div>
+      </section>
+
+      <section class="fr-section" aria-labelledby="primitive-colours">
+        <div class="container flow">
+          <h2 id="primitive-colours">Primitive colour palettes</h2>
+          <div class="fr-swatch-grid">
+            <div class="fr-swatch" style="--swatch: var(--warm-neutral-50)">
+              warm-neutral-50
+            </div>
+            <div class="fr-swatch" style="--swatch: var(--warm-neutral-950)">
+              warm-neutral-950
+            </div>
+            <div class="fr-swatch" style="--swatch: var(--umber-600)">
+              umber-600
+            </div>
+            <div class="fr-swatch" style="--swatch: var(--bronze-500)">
+              bronze-500
+            </div>
+            <div class="fr-swatch" style="--swatch: var(--green-500)">
+              green-500
+            </div>
+            <div class="fr-swatch" style="--swatch: var(--amber-500)">
+              amber-500
+            </div>
+            <div class="fr-swatch" style="--swatch: var(--red-500)">
+              red-500
+            </div>
+            <div class="fr-swatch" style="--swatch: var(--blue-500)">
+              blue-500
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="fr-section" aria-labelledby="semantic-colours">
+        <div class="container flow">
+          <h2 id="semantic-colours">Semantic colours</h2>
+          <div class="fr-specimen-grid">
+            <p class="fr-token-pill">color-background-page</p>
+            <p class="fr-token-pill">color-text-primary</p>
+            <p class="fr-token-pill">color-text-secondary</p>
+            <p class="fr-token-pill">color-border-focus</p>
+            <p class="fr-token-pill">color-interactive-primary</p>
+            <p class="fr-token-pill">color-feedback-error</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="fr-section" aria-labelledby="light-surfaces">
+        <div class="container flow">
+          <h2 id="light-surfaces">Light surface contexts</h2>
+          <div class="fr-surface-grid">
+            <div class="fr-surface surface-default">surface-default</div>
+            <div class="fr-surface surface-subtle">surface-subtle</div>
+            <div class="fr-surface surface-elevated">surface-elevated</div>
+            <div class="fr-surface surface-inverse">
+              surface-inverse <a href="#links">link</a>
+            </div>
+            <div class="fr-surface surface-accent">
+              surface-accent <a href="#links">link</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="fr-section" aria-labelledby="dark-context">
+        <div class="container flow">
+          <h2 id="dark-context">Explicit Dark-mode context</h2>
+          <div class="fr-dark-specimen flow" data-theme="dark">
+            <p class="type-eyebrow">data-theme="dark"</p>
+            <h3>Contained Dark specimen</h3>
+            <p class="text-measure-default">
+              Dark semantic tokens are available only when explicitly scoped.
+              Public pages remain Light by default.
+            </p>
+            <a href="#dark-context">Visible link in Dark context</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="fr-section" aria-labelledby="typography-families">
+        <div class="container flow">
+          <h2 id="typography-families">Typography families</h2>
+          <p class="type-display-small">DM Serif Display fallback stack</p>
+          <p class="type-body-large">DM Sans fallback stack</p>
+        </div>
+      </section>
+
+      <section class="fr-section" aria-labelledby="display-type">
+        <div class="container flow">
+          <h2 id="display-type">Display typography</h2>
+          <p class="type-display-xl">Display XL</p>
+          <p class="type-display-large">Display Large</p>
+          <p class="type-display-medium">Display Medium</p>
+          <p class="type-display-small">Display Small</p>
+        </div>
+      </section>
+
+      <section class="fr-section" aria-labelledby="heading-type">
+        <div class="container flow">
+          <h2 id="heading-type">Heading typography</h2>
+          <p class="type-heading-1">Heading 1</p>
+          <p class="type-heading-2">Heading 2</p>
+          <p class="type-heading-3">Heading 3</p>
+          <p class="type-heading-4">Heading 4</p>
+        </div>
+      </section>
+
+      <section class="fr-section" aria-labelledby="body-type">
+        <div class="container flow">
+          <h2 id="body-type">Body typography</h2>
+          <p class="type-body-xl">Body XL regular and readable.</p>
+          <p class="type-body-large">Body Large regular and readable.</p>
+          <p class="type-body-default">Body Default regular and readable.</p>
+          <p class="type-body-small">Body Small regular and readable.</p>
+          <p class="type-body-xs">Body XS regular and readable.</p>
+        </div>
+      </section>
+
+      <section class="fr-section" aria-labelledby="supporting-type">
+        <div class="container flow">
+          <h2 id="supporting-type">Labels and supporting text</h2>
+          <p class="type-label-large">Label Large</p>
+          <p class="type-label-default">Label Default</p>
+          <p class="type-label-small">Label Small</p>
+          <p class="type-label-xs">Label XS</p>
+          <p class="type-caption">Caption text</p>
+          <p class="type-eyebrow">Eyebrow text</p>
+          <p class="type-overline">Overline text</p>
+          <p class="type-quote">Quote specimen</p>
+        </div>
+      </section>
+
+      <section class="fr-section" aria-labelledby="responsive-type">
+        <div class="container flow">
+          <h2 id="responsive-type">Responsive typography examples</h2>
+          <p class="type-display-large text-measure-narrow">
+            Display type follows approved mobile, tablet, and desktop sizes.
+          </p>
+          <p class="type-body-xl text-measure-default">
+            Body XL adjusts by range while Body Default remains stable.
+          </p>
+        </div>
+      </section>
+
+      <section class="fr-section" aria-labelledby="spacing">
+        <div class="container flow">
+          <h2 id="spacing">Spacing scale</h2>
+          <div class="fr-spacing-list">
+            <span style="--space-demo: var(--space-0-5)">space-0-5</span>
+            <span style="--space-demo: var(--space-2)">space-2</span>
+            <span style="--space-demo: var(--space-6)">space-6</span>
+            <span style="--space-demo: var(--space-12)">space-12</span>
+            <span style="--space-demo: var(--space-20)">space-20</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="fr-section" aria-labelledby="containers">
+        <div class="container flow">
+          <h2 id="containers">Containers</h2>
+          <div class="fr-container-demo container-content">
+            container-content
+          </div>
+          <div class="fr-container-demo container-narrow">container-narrow</div>
+          <div class="fr-container-demo container-form">container-form</div>
+        </div>
+      </section>
+
+      <section class="fr-section" aria-labelledby="grid-references">
+        <div class="container flow">
+          <h2 id="grid-references">Grid references</h2>
+          <p>Desktop: 12 columns, 24px gutter, 64px margins, 1312px content.</p>
+          <p>Tablet: 8 columns, 16px gutter, 40px margins, 688px content.</p>
+          <p>Mobile: 4 columns, 16px gutter, 20px margins, 335px content.</p>
+        </div>
+      </section>
+
+      <section class="fr-section" aria-labelledby="text-measures">
+        <div class="container flow">
+          <h2 id="text-measures">Text measures</h2>
+          <p class="text-measure-narrow fr-measure">Narrow measure: 36ch.</p>
+          <p class="text-measure-default fr-measure">Default measure: 70ch.</p>
+          <p class="text-measure-wide fr-measure">Wide measure: 85ch.</p>
+        </div>
+      </section>
+
+      <section class="fr-section" aria-labelledby="radius">
+        <div class="container flow">
+          <h2 id="radius">Radius</h2>
+          <div class="fr-specimen-grid">
+            <div class="fr-radius" style="border-radius: var(--radius-none)">
+              none
+            </div>
+            <div class="fr-radius" style="border-radius: var(--radius-small)">
+              small
+            </div>
+            <div class="fr-radius" style="border-radius: var(--radius-medium)">
+              medium
+            </div>
+            <div class="fr-radius" style="border-radius: var(--radius-large)">
+              large
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="fr-section" aria-labelledby="borders">
+        <div class="container flow">
+          <h2 id="borders">Borders</h2>
+          <div class="fr-specimen-grid">
+            <div class="fr-border" style="border-width: var(--border-thin)">
+              thin
+            </div>
+            <div class="fr-border" style="border-width: var(--border-medium)">
+              medium
+            </div>
+            <div class="fr-border" style="border-width: var(--border-strong)">
+              strong
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="fr-section" aria-labelledby="elevation">
+        <div class="container flow">
+          <h2 id="elevation">Elevation</h2>
+          <div class="fr-specimen-grid">
+            <div class="fr-elevation" style="box-shadow: var(--elevation-none)">
+              none
+            </div>
+            <div
+              class="fr-elevation"
+              style="box-shadow: var(--elevation-subtle)"
+            >
+              subtle
+            </div>
+            <div
+              class="fr-elevation"
+              style="box-shadow: var(--elevation-medium)"
+            >
+              medium
+            </div>
+            <div
+              class="fr-elevation"
+              style="box-shadow: var(--elevation-floating)"
+            >
+              floating
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="fr-section" aria-labelledby="motion">
+        <div class="container flow">
+          <h2 id="motion">Motion tokens</h2>
+          <p>
+            Durations: instant, fast, default, slow, editorial. Easing:
+            standard, entrance, exit, editorial. Distances: small, medium,
+            large.
+          </p>
+        </div>
+      </section>
+
+      <section class="fr-section" aria-labelledby="focus-states">
+        <div class="container flow">
+          <h2 id="focus-states">Focus states</h2>
+          <a class="fr-focus-target" href="#focus-states">Focusable link</a>
+        </div>
+      </section>
+
+      <section class="fr-section" aria-labelledby="links">
+        <div class="container flow">
+          <h2 id="links">Links</h2>
+          <p>
+            <a href="#links">Readable text link with underline affordance</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="fr-section" aria-labelledby="feedback">
+        <div class="container flow">
+          <h2 id="feedback">Feedback colour contexts</h2>
+          <div class="grid fr-feedback-grid">
+            <p class="feedback-success">Success context</p>
+            <p class="feedback-warning">Warning context</p>
+            <p class="feedback-error">Error context</p>
+            <p class="feedback-information">Information context</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="fr-section" aria-labelledby="reduced-motion">
+        <div class="container flow">
+          <h2 id="reduced-motion">Reduced-motion note</h2>
+          <p class="text-measure-default">
+            The foundation preserves immediate state feedback and shortens
+            motion under <code>prefers-reduced-motion</code>. Interaction-level
+            behavior will be refined in later blocks.
+          </p>
+        </div>
+      </section>
+
+      <section class="fr-section" aria-labelledby="limitations">
+        <div class="container flow">
+          <h2 id="limitations">Foundation limitations</h2>
+          <p class="text-measure-default">
+            This route does not implement final components, page sections,
+            navigation styling, forms, registration, analytics, animation
+            sequences, production assets, or shared component behavior.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="page-container">
+        <p>Things Fall Apart Festival — Abuja Preview Experience</p>
+        <p>Development foundations reference only.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/scripts/main.js"></script>
+  </body>
+</html>
