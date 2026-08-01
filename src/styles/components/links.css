@@ -1,0 +1,38 @@
+.text-link,
+.utility-link {
+  color: var(--color-text-link);
+  text-decoration-color: currentcolor;
+  text-underline-offset: 0.2em;
+}
+
+.text-link:hover,
+.utility-link:hover {
+  color: var(--color-text-accent);
+}
+
+.text-link:focus-visible,
+.utility-link:focus-visible {
+  border-radius: var(--radius-small);
+  outline: var(--border-medium) solid var(--color-border-focus);
+  outline-offset: var(--space-0-5);
+}
+
+.utility-link {
+  font-size: var(--type-label-default-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--type-label-default-line-height);
+  text-decoration: none;
+}
+
+.utility-link:hover {
+  text-decoration: underline;
+}
+
+.text-link--subtle {
+  color: var(--color-text-secondary);
+}
+
+.text-link--inverse,
+.utility-link--inverse {
+  color: var(--color-text-inverse);
+}

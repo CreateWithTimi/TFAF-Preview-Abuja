@@ -1,0 +1,28 @@
+.media-frame {
+  background: var(--color-background-strong);
+  border: var(--border-thin) solid var(--color-border-subtle);
+  display: grid;
+  min-height: 180px;
+  place-items: center;
+}
+
+.media-frame img,
+.responsive-media {
+  block-size: auto;
+  display: block;
+  inline-size: 100%;
+}
+
+.responsive-figure {
+  display: grid;
+  gap: var(--space-1);
+  margin: 0;
+}
+
+.responsive-figure__caption,
+.responsive-figure__credit {
+  color: var(--color-text-secondary);
+  font-size: var(--type-caption-size);
+  line-height: var(--type-caption-line-height);
+  margin: 0;
+}

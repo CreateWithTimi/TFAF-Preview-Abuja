@@ -1,0 +1,23 @@
+.accordion {
+  border-block-start: var(--border-thin) solid var(--color-border-subtle);
+}
+
+.accordion__item {
+  border-block-end: var(--border-thin) solid var(--color-border-subtle);
+}
+
+.accordion__summary {
+  cursor: pointer;
+  font-weight: var(--font-weight-bold);
+  padding-block: var(--space-2);
+}
+
+.accordion__summary:focus-visible {
+  outline: var(--border-medium) solid var(--color-border-focus);
+  outline-offset: var(--space-0-5);
+}
+
+.accordion__content {
+  color: var(--color-text-secondary);
+  padding-block-end: var(--space-2);
+}

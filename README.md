@@ -8,7 +8,7 @@ The current public pages are engineering placeholders only. They are not the fin
 
 ## Current Engineering Phase
 
-009.2 — Design Tokens and Global Styles
+009.3 — Shared Components
 
 ## Technology Stack
 
@@ -21,7 +21,7 @@ The current public pages are engineering placeholders only. They are not the fin
 - Prettier
 - EditorConfig
 
-No React, TypeScript, Tailwind CSS, Sass, CMS, backend, analytics, registration service, or shared component system is included in this phase.
+No React, TypeScript, Tailwind CSS, Sass, CMS, backend, analytics, registration service, or page-section assembly is included in this phase.
 
 ## Local Installation
 
@@ -29,7 +29,7 @@ No React, TypeScript, Tailwind CSS, Sass, CMS, backend, analytics, registration 
 npm install
 ```
 
-No environment variables are required for 009.2.
+No environment variables are required for 009.3.
 
 ## Development Commands
 
@@ -41,10 +41,11 @@ npm run lint
 npm run format
 npm run format:check
 npm run tokens:check
+npm run components:check
 npm run check
 ```
 
-`npm run check` runs linting, formatting verification, token validation, and the production build.
+`npm run check` runs linting, formatting verification, token validation, component validation, and the production build.
 
 ## Route Inventory
 
@@ -58,8 +59,9 @@ Public routes:
 Development-only route:
 
 - `/dev/foundations/` — Development foundations reference
+- `/dev/components/` — Development shared-components reference
 
-The development foundations page is not a public festival route and must not be added to public navigation, footer navigation, sitemap, or public page architecture.
+Development routes are not public festival routes and must not be added to public navigation, footer navigation, sitemap, or public page architecture.
 
 ## Figma Foundations Source
 
@@ -72,6 +74,18 @@ Approved source:
 - Node name: `01 Foundations`
 
 Read-only inspection confirmed 7 variable collections, 143 variables, 25 text styles, 4 effect styles, and 4 grid styles.
+
+## Figma Core Components Source
+
+Approved source:
+
+- File: `TFAF`
+- File key: `0z2Eoo0SEXchc3yMRgEWS0`
+- Page: `04 Design System`
+- Node: `28:2`
+- Node name: `02 Core Components`
+
+Read-only inspection confirmed the 009.3 component scope: buttons, text links, icon buttons, tags/badges, dividers, navigation, accordion, status/feedback labels, and documented component principles. Metadata, event-detail, media, partner-mark, header, and footer code foundations are implemented as reusable website primitives without starting 009.4 page-section composition.
 
 ## CSS Architecture
 
@@ -91,9 +105,25 @@ Primary foundation files:
 
 The page-specific reference stylesheet is `src/styles/pages/foundations-reference.css` and is kept in the `pages` layer.
 
+Shared component files live in `src/styles/components/` and are imported in the `components` layer:
+
+- buttons
+- links
+- navigation
+- menu toggle
+- header
+- footer
+- metadata
+- event details
+- media
+- partner marks
+- accordion
+- icon controls
+- status labels
+
 ## Token Guidance
 
-009.2 implements primitive and semantic tokens only. Do not add component tokens such as button, card, navigation, or accordion tokens until later shared-component work.
+009.2 implemented primitive and semantic tokens. 009.3 consumes those existing tokens for shared components and does not introduce final page-composition tokens.
 
 CSS custom properties use lowercase kebab-case and do not use slash characters. Figma fractional spacing names map as:
 
@@ -105,6 +135,12 @@ Run token validation with:
 
 ```sh
 npm run tokens:check
+```
+
+Run component validation with:
+
+```sh
+npm run components:check
 ```
 
 ## Dark-Mode Policy
@@ -194,7 +230,23 @@ Accessibility validation continues during later engineering and QA building bloc
 
 ## Progressive Enhancement
 
-HTML provides the primary experience. CSS provides approved global foundations. JavaScript modules remain safe no-op foundations and are not required for route readability, navigation, footer content, or chapter-anchor access.
+HTML provides the primary experience. CSS provides approved global foundations. Public header, footer, navigation links, page content, and Experience chapter anchors are present in the document before JavaScript runs.
+
+The mobile navigation uses an inline-disclosure enhancement: it is visible by default without JavaScript, and `src/scripts/navigation.js` collapses it only after enhancement is initialized. Accordions use native `details` and `summary` so content remains readable without JavaScript.
+
+## Shared Header And Footer
+
+This is still a vanilla multi-page site. Header and footer markup is repeated in the four public HTML route files, with shared-region comments retained. Keep those shells synchronized manually until an approved future building block introduces a templating strategy.
+
+The public shell includes:
+
+- identity link to `/`
+- Festival, Experience, and Visit links
+- non-interactive `Register Interest` placeholder text
+- responsive mobile navigation disclosure
+- utility footer navigation for approved public routes only
+
+Do not add a Home primary navigation item, dead `href="#"` links, `/register/`, or speculative footer links.
 
 ## Chapter-Anchor Inventory
 
@@ -222,24 +274,41 @@ Recommended working branch:
 build/009-2-design-tokens-global-styles
 ```
 
+For the current phase:
+
+```text
+build/009-3-shared-components
+```
+
 ## Current Limitations
 
 - Public pages remain engineering placeholders.
-- Shared components have not been built.
-- Final header, footer, navigation styling, cards, forms, accordions, media components, page sections, and final page assembly are not implemented.
+- Shared component foundations have been built, but final page-section composition has not started.
+- Final page assembly, cards, form flows, registration, final media assets, and content components are not implemented.
 - No production image assets, analytics, registration, backend, CMS, Rive, or animation sequences are included.
 - Font files are not yet present locally.
 - Browser and accessibility automation remain future QA work.
 
 ## Suggested Commit Sequence
 
-1. `feat: implement design token foundations`
-2. `feat: add global typography and layout styles`
-3. `feat: add foundation surface and accessibility utilities`
-4. `feat: add foundations reference route`
-5. `test: add token validation audit`
-6. `docs: document design-system foundations`
+1. `feat: add shared component primitives`
+2. `feat: integrate shared header and footer shell`
+3. `feat: add mobile navigation enhancement`
+4. `feat: add component reference route`
+5. `test: add component validation audit`
+6. `docs: document shared component foundation`
+
+## Definition Of Done For 009.3
+
+- Shared component CSS files exist and import through the components layer.
+- Public route shells use the shared header/footer pattern.
+- Mobile navigation is readable without JavaScript and enhanced only after initialization.
+- Accordion specimens use native disclosure behavior.
+- `/dev/components/` exists and is excluded from public navigation.
+- `npm run components:check` passes.
+- `npm run check` passes.
+- Building Block 009.4 has not started.
 
 ## Next Building Block
 
-009.3 — Shared Components
+009.4 — Content Components

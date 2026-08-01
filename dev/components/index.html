@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Component Reference | Things Fall Apart Festival</title>
+    <meta
+      name="description"
+      content="Internal engineering reference for the shared component foundation."
+    />
+    <!-- TODO: Add canonical URL only if this development route is intentionally published. -->
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Development-only shared shell specimen. Keep public shell source in route files. -->
+    <header class="site-header" data-site-header>
+      <div class="page-container site-header__inner">
+        <a
+          class="site-identity"
+          href="/"
+          aria-label="Things Fall Apart Festival home"
+        >
+          Things Fall Apart Festival
+        </a>
+        <nav class="primary-navigation" aria-label="Primary navigation">
+          <ul class="primary-navigation__list">
+            <li>
+              <a class="primary-navigation__link" href="/festival/">Festival</a>
+            </li>
+            <li>
+              <a class="primary-navigation__link" href="/experience/"
+                >Experience</a
+              >
+            </li>
+            <li>
+              <a class="primary-navigation__link" href="/visit/">Visit</a>
+            </li>
+          </ul>
+        </nav>
+        <p
+          class="site-header__registration status-label status-label--placeholder"
+        >
+          Register Interest
+          <span class="visually-hidden">destination pending approval</span>
+        </p>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="dev-primary-mobile-navigation"
+          data-menu-toggle
+        >
+          <span class="menu-toggle__label">Open menu</span>
+          <span class="menu-toggle__icon" aria-hidden="true"></span>
+        </button>
+      </div>
+      <nav
+        class="mobile-navigation"
+        id="dev-primary-mobile-navigation"
+        aria-label="Mobile primary navigation"
+        data-mobile-navigation
+      >
+        <div class="page-container mobile-navigation__inner">
+          <ul class="mobile-navigation__list">
+            <li>
+              <a
+                class="mobile-navigation__link"
+                href="/festival/"
+                data-menu-link
+                >Festival</a
+              >
+            </li>
+            <li>
+              <a
+                class="mobile-navigation__link"
+                href="/experience/"
+                data-menu-link
+                >Experience</a
+              >
+            </li>
+            <li>
+              <a class="mobile-navigation__link" href="/visit/" data-menu-link
+                >Visit</a
+              >
+            </li>
+          </ul>
+          <p class="status-label status-label--placeholder">
+            Register Interest
+            <span class="visually-hidden">destination pending approval</span>
+          </p>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="page-section">
+        <div class="page-container page-stack">
+          <p class="type-eyebrow">009.3 engineering reference</p>
+          <h1 class="type-heading-1">Shared Components</h1>
+          <p>
+            Development specimens only. This route is intentionally not linked
+            from the public navigation.
+          </p>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <div class="page-container page-stack">
+          <h2 class="type-heading-2">Overview</h2>
+          <p>
+            Components use approved 009.2 semantic tokens and placeholder
+            labels. They are not final page compositions.
+          </p>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <div class="page-container page-stack">
+          <h2 class="type-heading-2">Actions</h2>
+          <p>
+            <button class="button button--primary" type="button">
+              Primary
+            </button>
+            <button class="button button--secondary" type="button">
+              Secondary
+            </button>
+            <button class="button button--tertiary" type="button">
+              Tertiary
+            </button>
+            <button class="button button--text" type="button">
+              Text action
+            </button>
+          </p>
+          <h3 class="type-heading-3">Sizes</h3>
+          <p>
+            <button class="button button--primary button--small" type="button">
+              Small
+            </button>
+            <button class="button button--primary" type="button">Medium</button>
+            <button class="button button--primary button--large" type="button">
+              Large
+            </button>
+          </p>
+          <h3 class="type-heading-3">Long Labels</h3>
+          <p>
+            <button class="button button--secondary" type="button">
+              Long placeholder action label
+            </button>
+          </p>
+          <h3 class="type-heading-3">Full Width</h3>
+          <button class="button button--primary button--full" type="button">
+            Full width placeholder action
+          </button>
+          <h3 class="type-heading-3">States</h3>
+          <p>
+            <button class="button button--primary" type="button">
+              <span class="button__spinner" aria-hidden="true"></span> Loading
+            </button>
+            <button class="button button--primary" type="button" disabled>
+              Disabled
+            </button>
+          </p>
+          <h3 class="type-heading-3">Inverse</h3>
+          <div class="surface-inverse page-stack">
+            <button class="button button--secondary" type="button">
+              Inverse surface action
+            </button>
+            <a class="text-link text-link--inverse" href="/festival/"
+              >Inverse link</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <div class="page-container page-stack">
+          <h2 class="type-heading-2">Links</h2>
+          <p>
+            <a class="text-link" href="/festival/">Default link</a>
+            <a class="text-link text-link--subtle" href="/experience/"
+              >Subtle link</a
+            >
+            <a class="utility-link" href="/visit/">Utility link</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <div class="page-container page-stack">
+          <h2 class="type-heading-2">Navigation Links</h2>
+          <nav
+            class="primary-navigation"
+            aria-label="Component navigation specimen"
+          >
+            <ul class="primary-navigation__list">
+              <li>
+                <a
+                  class="primary-navigation__link"
+                  href="/festival/"
+                  aria-current="page"
+                  >Festival</a
+                >
+              </li>
+              <li>
+                <a class="primary-navigation__link" href="/experience/"
+                  >Experience</a
+                >
+              </li>
+              <li>
+                <a class="primary-navigation__link" href="/visit/">Visit</a>
+              </li>
+            </ul>
+          </nav>
+          <h3 class="type-heading-3">Header States</h3>
+          <p class="status-label status-label--placeholder">
+            Register Interest pending
+          </p>
+          <h3 class="type-heading-3">Mobile Closed</h3>
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="dev-menu-closed"
+          >
+            <span class="menu-toggle__label">Open menu</span>
+            <span class="menu-toggle__icon" aria-hidden="true"></span>
+          </button>
+          <h3 class="type-heading-3">Mobile Open</h3>
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="true"
+            aria-controls="dev-menu-open"
+          >
+            <span class="menu-toggle__label">Close menu</span>
+            <span class="menu-toggle__icon" aria-hidden="true"></span>
+          </button>
+          <nav
+            id="dev-menu-open"
+            class="mobile-navigation"
+            aria-label="Open mobile menu specimen"
+          >
+            <ul class="mobile-navigation__list">
+              <li>
+                <a class="mobile-navigation__link" href="/festival/"
+                  >Festival</a
+                >
+              </li>
+              <li>
+                <a class="mobile-navigation__link" href="/experience/"
+                  >Experience</a
+                >
+              </li>
+              <li>
+                <a class="mobile-navigation__link" href="/visit/">Visit</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <div class="page-container page-stack">
+          <h2 class="type-heading-2">Footer</h2>
+          <p class="site-footer__title">
+            Things Fall Apart Festival — Abuja Preview Experience
+          </p>
+          <nav
+            class="footer-navigation"
+            aria-label="Footer specimen navigation"
+          >
+            <ul class="footer-navigation__list">
+              <li>
+                <a class="footer-navigation__link" href="/festival/"
+                  >Festival</a
+                >
+              </li>
+              <li>
+                <a class="footer-navigation__link" href="/experience/"
+                  >Experience</a
+                >
+              </li>
+              <li>
+                <a class="footer-navigation__link" href="/visit/">Visit</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <div class="page-container page-stack">
+          <h2 class="type-heading-2">Event Details</h2>
+          <dl class="event-details">
+            <div class="event-details__item">
+              <dt class="event-details__term">Location:</dt>
+              <dd class="event-details__description">Abuja</dd>
+            </div>
+            <div class="event-details__item">
+              <dt class="event-details__term">Status:</dt>
+              <dd class="event-details__description">Placeholder only</dd>
+            </div>
+          </dl>
+          <h2 class="type-heading-2">Metadata</h2>
+          <ul class="metadata-list">
+            <li class="metadata-item">Metadata item</li>
+            <li class="metadata-item">Second item</li>
+            <li class="metadata-item">
+              Long placeholder metadata item for wrapping
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <div class="page-container page-stack">
+          <h2 class="type-heading-2">Media</h2>
+          <figure class="responsive-figure">
+            <div
+              class="media-frame"
+              role="img"
+              aria-label="Placeholder media frame"
+            >
+              Placeholder media
+            </div>
+            <figcaption class="responsive-figure__caption">
+              Placeholder caption for engineering review.
+            </figcaption>
+            <p class="responsive-figure__credit">Credit pending approval.</p>
+          </figure>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <div class="page-container page-stack">
+          <h2 class="type-heading-2">Partner Marks</h2>
+          <ul class="partner-mark-list">
+            <li><span class="partner-mark">Static mark</span></li>
+            <li><a class="partner-mark" href="/festival/">Linked mark</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <div class="page-container page-stack">
+          <h2 class="type-heading-2">Accordion</h2>
+          <div class="accordion" data-accordion>
+            <details class="accordion__item">
+              <summary class="accordion__summary">
+                Collapsed placeholder question
+              </summary>
+              <div class="accordion__content">
+                <p>Placeholder accordion content.</p>
+              </div>
+            </details>
+            <details class="accordion__item" open>
+              <summary class="accordion__summary">
+                Open placeholder question with long text
+              </summary>
+              <div class="accordion__content">
+                <p>
+                  Long placeholder content confirms wrapping, native disclosure
+                  behavior, and no-JavaScript readability.
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <div class="page-container page-stack">
+          <h2 class="type-heading-2">Icon Controls</h2>
+          <p>
+            <button class="icon-control" type="button" aria-label="Previous">
+              ‹
+            </button>
+            <button
+              class="icon-control icon-control--accent"
+              type="button"
+              aria-label="Next"
+            >
+              ›
+            </button>
+            <button
+              class="icon-control icon-control--large"
+              type="button"
+              aria-label="Close"
+            >
+              ×
+            </button>
+            <button
+              class="icon-control"
+              type="button"
+              aria-label="Disabled control"
+              disabled
+            >
+              ×
+            </button>
+          </p>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <div class="page-container page-stack">
+          <h2 class="type-heading-2">Status Labels</h2>
+          <p>
+            <span class="status-label status-label--neutral">Neutral</span>
+            <span class="status-label status-label--success">Success</span>
+            <span class="status-label status-label--warning">Warning</span>
+            <span class="status-label status-label--error">Error</span>
+            <span class="status-label status-label--information"
+              >Information</span
+            >
+            <span class="status-label status-label--placeholder"
+              >Placeholder</span
+            >
+          </p>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <div class="page-container page-stack">
+          <h2 class="type-heading-2">Focus</h2>
+          <p>
+            <a class="utility-link" href="/festival/"
+              >Keyboard focus specimen</a
+            >
+          </p>
+          <h2 class="type-heading-2">Touch Target</h2>
+          <button
+            class="icon-control"
+            type="button"
+            aria-label="Touch target specimen"
+          >
+            +
+          </button>
+          <h2 class="type-heading-2">320 Width Stress</h2>
+          <button class="button button--secondary button--full" type="button">
+            Very long placeholder action label wraps if required
+          </button>
+          <h2 class="type-heading-2">Reduced Motion</h2>
+          <p>
+            Spinner animation is disabled by the reduced-motion media query.
+          </p>
+          <h2 class="type-heading-2">Limitations</h2>
+          <p>
+            Components remain shared foundations only. 009.4 content components
+            and page assembly have not started.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="page-container site-footer__inner">
+        <p class="site-footer__title">
+          Things Fall Apart Festival — Abuja Preview Experience
+        </p>
+        <p class="site-footer__note">Development route. Not public content.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/scripts/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+.partner-mark-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.partner-mark {
+  align-items: center;
+  border: var(--border-thin) solid var(--color-border-default);
+  border-radius: var(--radius-medium);
+  color: var(--color-text-secondary);
+  display: inline-flex;
+  min-height: 48px;
+  min-width: 120px;
+  padding: var(--space-1) var(--space-2);
+}
+
+a.partner-mark {
+  color: var(--color-text-link);
+  text-decoration: none;
+}
+
+a.partner-mark:focus-visible {
+  outline: var(--border-medium) solid var(--color-border-focus);
+  outline-offset: var(--space-0-5);
+}
