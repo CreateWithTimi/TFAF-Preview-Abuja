@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 
 const homePath = "index.html";
-const remainingPlaceholderPublicPages = ["visit/index.html"];
+const remainingPlaceholderPublicPages = [];
 const developmentPages = [
   "dev/foundations/index.html",
   "dev/components/index.html",

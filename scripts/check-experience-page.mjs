@@ -292,10 +292,11 @@ record(
 
 const visit = await read("visit/index.html");
 record(
-  !visit.includes("composition-hero") &&
-    !visit.includes("composition-registration-cta") &&
-    visit.includes("Location:"),
-  "Visit route no longer appears placeholder-level",
+  visit.includes("Plan Your Visit") &&
+    visit.includes('id="visit-hero"') &&
+    visit.includes('id="event-information"') &&
+    visit.includes('id="registration-interest"'),
+  "Visit route no longer appears assembled as expected",
 );
 
 const mainCss = await read("src/styles/main.css");

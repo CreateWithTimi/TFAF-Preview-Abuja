@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 
 const festivalPath = "festival/index.html";
-const placeholderPublicPages = ["visit/index.html"];
+const placeholderPublicPages = [];
 const developmentPages = [
   "dev/foundations/index.html",
   "dev/components/index.html",

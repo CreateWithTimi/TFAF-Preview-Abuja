@@ -183,8 +183,10 @@ record(
 const visit = await read("visit/index.html");
 record(
   visit.includes("Plan Your Visit") &&
-    visit.includes('<dd class="event-details__description">Abuja</dd>'),
-  "visit/index.html: approved Visit information changed",
+    visit.includes('id="visit-hero"') &&
+    visit.includes('id="event-information"') &&
+    visit.includes("Registration details will be confirmed by the organizers."),
+  "visit/index.html: approved Visit assembly changed",
 );
 
 const componentDir = await readdir("src/styles/components");
