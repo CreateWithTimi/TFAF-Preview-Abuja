@@ -16,7 +16,8 @@
     "compositions:check": "node scripts/check-compositions.mjs",
     "home:check": "node scripts/check-home-page.mjs",
     "festival:check": "node scripts/check-festival-page.mjs",
-    "check": "npm run lint && npm run format:check && npm run tokens:check && npm run components:check && npm run content:check && npm run compositions:check && npm run home:check && npm run festival:check && npm run build"
+    "experience:check": "node scripts/check-experience-page.mjs",
+    "check": "npm run lint && npm run format:check && npm run tokens:check && npm run components:check && npm run content:check && npm run compositions:check && npm run home:check && npm run festival:check && npm run experience:check && npm run build"
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",

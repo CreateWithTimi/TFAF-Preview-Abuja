@@ -280,6 +280,7 @@ for (const page of publicPages) {
   record(
     page === "index.html" ||
       page === "festival/index.html" ||
+      page === "experience/index.html" ||
       (!content.includes("composition-hero") &&
         !content.includes("composition-experience-journey") &&
         !content.includes("composition-registration-cta")),
