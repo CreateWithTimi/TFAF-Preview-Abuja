@@ -1,0 +1,29 @@
+.festival-section .section-header__action {
+  margin-block-start: var(--space-1);
+}
+
+.festival-hero .theme-statement__support,
+.festival-hero .composition-hero__lead {
+  color: var(--color-text-inverse);
+}
+
+.festival-hero .content-media-placeholder__frame {
+  background: var(--color-surface-inverse);
+  border-color: var(--color-border-subtle);
+  color: var(--color-text-inverse);
+}
+
+.festival-placeholder-copy {
+  margin: 0;
+  max-inline-size: var(--container-content-max);
+}
+
+.festival-section .status-label {
+  justify-self: center;
+}
+
+@media (max-width: 374px) {
+  .festival-section .button {
+    inline-size: 100%;
+  }
+}

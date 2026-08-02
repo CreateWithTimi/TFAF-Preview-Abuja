@@ -50,3 +50,4 @@
 @import url("./foundations/utilities.css") layer(utilities);
 @import url("./pages/foundations-reference.css") layer(pages);
 @import url("./pages/home.css") layer(pages);
+@import url("./pages/festival.css") layer(pages);

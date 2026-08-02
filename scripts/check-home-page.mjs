@@ -1,8 +1,7 @@
 import { readFile } from "node:fs/promises";
 
 const homePath = "index.html";
-const otherPublicPages = [
-  "festival/index.html",
+const remainingPlaceholderPublicPages = [
   "experience/index.html",
   "visit/index.html",
 ];
@@ -202,7 +201,7 @@ record(
   "Home does not include the shared shell",
 );
 
-for (const page of otherPublicPages) {
+for (const page of remainingPlaceholderPublicPages) {
   const content = await read(page);
   record(
     !content.includes("composition-hero") &&
@@ -278,5 +277,5 @@ if (errors.length > 0) {
 }
 
 console.log(
-  `Home audit passed: ${requiredSectionIds.length} section IDs, ${otherPublicPages.length} other public routes, ${developmentPages.length} development routes checked.`,
+  `Home audit passed: ${requiredSectionIds.length} section IDs, ${remainingPlaceholderPublicPages.length} remaining placeholder public routes, ${developmentPages.length} development routes checked.`,
 );
