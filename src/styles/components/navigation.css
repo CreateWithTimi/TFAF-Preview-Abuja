@@ -11,11 +11,13 @@
 .primary-navigation__link,
 .mobile-navigation__link,
 .footer-navigation__link {
+  align-items: center;
   border-radius: var(--radius-small);
   color: var(--color-text-primary);
   display: inline-flex;
   font-size: var(--type-label-default-size);
   font-weight: var(--font-weight-bold);
+  min-block-size: 44px;
   line-height: var(--type-label-default-line-height);
   padding: var(--space-0-5);
   text-decoration: none;
