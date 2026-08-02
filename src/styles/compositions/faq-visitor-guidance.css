@@ -1,0 +1,14 @@
+.composition-faq-visitor-guidance__body {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.composition-faq-visitor-guidance .accordion {
+  min-inline-size: 0;
+}
+
+@media (min-width: 1024px) {
+  .composition-faq-visitor-guidance__body {
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.9fr);
+  }
+}

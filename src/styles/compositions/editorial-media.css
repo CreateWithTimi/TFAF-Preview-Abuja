@@ -1,0 +1,7 @@
+.composition-editorial-media .composition__split {
+  align-items: start;
+}
+
+.composition-editorial-media--stacked .composition__split {
+  grid-template-columns: 1fr;
+}

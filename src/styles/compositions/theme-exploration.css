@@ -1,0 +1,11 @@
+.composition-theme-exploration .composition__stack {
+  gap: var(--space-5);
+}
+
+.composition-theme-exploration .theme-statement {
+  max-inline-size: var(--container-page-max);
+}
+
+.composition-theme-exploration--compact .composition__stack {
+  gap: var(--space-3);
+}

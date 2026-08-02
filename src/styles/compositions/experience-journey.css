@@ -1,0 +1,14 @@
+.composition-experience-journey .experience-sequence {
+  gap: var(--space-4);
+}
+
+.composition-experience-journey .experience-item__connector {
+  inline-size: var(--border-thin);
+  min-block-size: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .composition-experience-journey .experience-sequence {
+    gap: var(--space-5);
+  }
+}

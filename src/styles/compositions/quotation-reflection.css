@@ -1,0 +1,12 @@
+.composition-quotation-reflection .editorial-quote {
+  max-inline-size: var(--container-content-max);
+}
+
+.composition-quotation-reflection .composition__content {
+  justify-items: start;
+}
+
+.composition-quotation-reflection--centered .composition__content {
+  justify-items: center;
+  text-align: center;
+}

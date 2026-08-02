@@ -1,0 +1,7 @@
+.composition-cultural-context .composition__split {
+  align-items: start;
+}
+
+.composition-cultural-context .context-note {
+  max-inline-size: var(--container-content-max);
+}

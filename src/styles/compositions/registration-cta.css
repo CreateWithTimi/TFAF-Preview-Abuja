@@ -1,0 +1,7 @@
+.composition-registration-cta .content-cta {
+  max-inline-size: var(--container-content-max);
+}
+
+.composition-registration-cta .content-cta__actions {
+  align-items: center;
+}

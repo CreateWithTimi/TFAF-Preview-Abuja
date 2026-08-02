@@ -18,6 +18,7 @@ export default defineConfig({
           projectRoot,
           "dev/content-components/index.html",
         ),
+        compositions: resolve(projectRoot, "dev/compositions/index.html"),
       },
     },
   },

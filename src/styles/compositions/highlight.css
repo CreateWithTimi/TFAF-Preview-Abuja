@@ -1,0 +1,6 @@
+.composition-highlight__items {
+  align-items: start;
+  display: grid;
+  gap: var(--space-2);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+}

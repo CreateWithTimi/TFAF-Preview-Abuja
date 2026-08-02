@@ -8,7 +8,7 @@ The current public pages are engineering placeholders only. They are not the fin
 
 ## Current Engineering Phase
 
-009.4 — Content Components
+009.5 — Section Compositions
 
 ## Technology Stack
 
@@ -21,7 +21,7 @@ The current public pages are engineering placeholders only. They are not the fin
 - Prettier
 - EditorConfig
 
-No React, TypeScript, Tailwind CSS, Sass, CMS, backend, analytics, registration service, page-section composition, or public page assembly is included in this phase.
+No React, TypeScript, Tailwind CSS, Sass, CMS, backend, analytics, registration service, final page implementation, or public page assembly is included in this phase.
 
 ## Local Installation
 
@@ -29,7 +29,7 @@ No React, TypeScript, Tailwind CSS, Sass, CMS, backend, analytics, registration 
 npm install
 ```
 
-No environment variables are required for 009.4.
+No environment variables are required for 009.5.
 
 ## Development Commands
 
@@ -43,10 +43,11 @@ npm run format:check
 npm run tokens:check
 npm run components:check
 npm run content:check
+npm run compositions:check
 npm run check
 ```
 
-`npm run check` runs linting, formatting verification, token validation, shared-component validation, content-component validation, and the production build.
+`npm run check` runs linting, formatting verification, token validation, shared-component validation, content-component validation, section-composition validation, and the production build.
 
 ## Route Inventory
 
@@ -62,6 +63,7 @@ Development-only route:
 - `/dev/foundations/` — Development foundations reference
 - `/dev/components/` — Development shared-components reference
 - `/dev/content-components/` — Development content-components reference
+- `/dev/compositions/` — Development section-compositions reference
 
 Development routes are not public festival routes and must not be added to public navigation, footer navigation, sitemap, or public page architecture.
 
@@ -119,7 +121,37 @@ Verified content families:
 - `content/media-placeholder`
 - `content/cta`
 
-The expected FAQ group is absent from node `47:264`; no `content/faq-group` implementation exists in 009.4. Complete FAQ section composition belongs to 009.5.
+The expected FAQ group is absent from node `47:264`; no `content/faq-group` implementation exists. The 009.5 FAQ & Visitor Guidance composition directly assembles the 009.3 native accordion with existing editorial/context components.
+
+## Figma Page Section Composition Source
+
+Approved source:
+
+- File: `TFAF`
+- File key: `0z2Eoo0SEXchc3yMRgEWS0`
+- Page: `04 Design System`
+- Node: `73:760`
+- Node name: `04 Page Section Composition`
+
+Read-only inspection confirmed these composition families:
+
+- Hero Compositions
+- Festival Introduction
+- Theme Exploration
+- Experience Overview
+- Full Experience Journey
+- Featured Chapter
+- Event Information
+- Editorial Media
+- Cultural Context
+- Highlight Composition
+- Quotation & Reflection
+- Partners
+- Registration CTA
+- FAQ & Visitor Guidance
+- Closing Composition
+
+The Figma board is marked `Ready for Human Review`. DOM-order confirmation, spacing-token documentation, breakpoint documentation, property-behaviour mapping, boolean-property naming, responsive specimen validation, and final browser/assistive-technology validation remain review items.
 
 ## CSS Architecture
 
@@ -158,6 +190,27 @@ Shared component files live in `src/styles/components/` and are imported in the 
 
 Content component files live in `src/styles/content/` and are imported in the `content` layer. Content styles consume foundation tokens and reuse shared components rather than redefining controls.
 
+Section composition files live in `src/styles/compositions/` and are imported in the `compositions` layer. This layer owns only outer section structure, container relationship, surface context, responsive grids, region placement, and optional-region collapse. It must not recreate shared controls or duplicate content-component anatomy.
+
+Implemented composition files:
+
+- `base.css`
+- `hero.css`
+- `festival-introduction.css`
+- `theme-exploration.css`
+- `experience-overview.css`
+- `experience-journey.css`
+- `featured-chapter.css`
+- `event-information.css`
+- `editorial-media.css`
+- `cultural-context.css`
+- `highlight.css`
+- `quotation-reflection.css`
+- `partners.css`
+- `registration-cta.css`
+- `faq-visitor-guidance.css`
+- `closing.css`
+
 ## Token Guidance
 
 009.2 implemented primitive and semantic tokens. 009.3 consumes those existing tokens for shared components and does not introduce final page-composition tokens.
@@ -184,6 +237,12 @@ Run content-component validation with:
 
 ```sh
 npm run content:check
+```
+
+Run section-composition validation with:
+
+```sh
+npm run compositions:check
 ```
 
 ## Dark-Mode Policy
@@ -305,6 +364,55 @@ Approved event placeholders for specimens:
 - `Venue: To be confirmed`
 - `Location: Abuja`
 
+## Section Composition Strategy
+
+Compositions assemble existing shared and content components into reusable page sections. The current composition layer includes hero variants, editorial introductions, theme exploration, experience overview, full journey, featured chapter, event information, editorial media, cultural context, highlights, quotation/reflection, partners, registration CTA, FAQ/visitor guidance, and closing patterns.
+
+The composition reference page is development-only and is not part of the public festival route architecture.
+
+DOM order strategy:
+
+- Preserve semantic reading order even when desktop visual media placement changes.
+- Keep text before media when media is semantically secondary.
+- Use CSS Grid placement for media-left/media-right variants.
+- Do not duplicate content for separate breakpoints.
+
+Optional-region strategy:
+
+- Omit missing regions from HTML instead of rendering empty wrappers.
+- Supported optional regions include eyebrow, description, media, metadata, context note, primary/secondary actions, partner groups, quote attribution, visitor guidance, highlights, and status notes.
+- Figma boolean-property names remain under review; current implementation uses semantic HTML absence and documented modifier classes.
+
+Surface strategy:
+
+- Use existing semantic surfaces: default, subtle, inverse, accent, and elevated only where appropriate.
+- Do not alternate surfaces mechanically.
+- Surface choices are section-level context, not page rhythm.
+
+Responsive composition strategy:
+
+- Reference widths are 1280px/1440px desktop, 768px tablet, 375px mobile, and 320px reflow stress.
+- Split layouts stack, grids wrap, event details reduce columns, CTA actions stack, and journey content remains sequential.
+- Browser validation is still required before claiming final responsive approval.
+
+No-page-assembly boundary:
+
+- Public routes remain shell-level placeholders.
+- Do not add hero, theme, journey, event, FAQ, CTA, or closing compositions to `/`, `/festival/`, `/experience/`, or `/visit/` until 009.6 or later.
+- `/dev/compositions/` is a static specimen route only.
+
+FAQ composition strategy:
+
+- No `content/faq-group` component exists.
+- The FAQ & Visitor Guidance composition reuses the 009.3 native `details`/`summary` accordion and existing context/editorial components.
+- FAQ copy remains placeholder-only until approved.
+
+Review-status notes:
+
+- `content/experience-item` property mapping remains under review.
+- `content/event-detail` property mapping remains under review.
+- Composition boolean property names remain under review.
+
 ## Progressive Enhancement
 
 HTML provides the primary experience. CSS provides approved global foundations. Public header, footer, navigation links, page content, and Experience chapter anchors are present in the document before JavaScript runs.
@@ -312,6 +420,8 @@ HTML provides the primary experience. CSS provides approved global foundations. 
 The mobile navigation uses an inline-disclosure enhancement: it is visible by default without JavaScript, and `src/scripts/navigation.js` collapses it only after enhancement is initialized. Accordions use native `details` and `summary` so content remains readable without JavaScript.
 
 Content components introduce no new JavaScript. All content-component text, sequencing, media placeholders, event details, partner marks, and CTA placeholders are present in semantic HTML.
+
+Section compositions introduce no new JavaScript. `/dev/compositions/` is fully static HTML, and its layout is controlled by CSS only. Accordions retain the native 009.3 fallback behaviour.
 
 ## Shared Header And Footer
 
@@ -350,46 +460,43 @@ Do not create `yarn.lock`, `pnpm-lock.yaml`, `bun.lock`, or `bun.lockb`.
 Recommended working branch:
 
 ```text
-build/009-2-design-tokens-global-styles
-```
-
-For the current phase:
-
-```text
-build/009-4-content-components
+build/009-5-section-compositions
 ```
 
 ## Current Limitations
 
 - Public pages remain engineering placeholders.
-- Shared and content component foundations have been built, but final page-section composition has not started.
-- Final page assembly, form flows, registration, final media assets, complete FAQ sections, and section compositions are not implemented.
+- Shared, content, and section-composition foundations have been built, but final public page assembly has not started.
+- Final page assembly, form flows, registration, final media assets, final FAQ copy, and final page-level content ordering are not implemented.
 - No production image assets, analytics, registration, backend, CMS, Rive, or animation sequences are included.
 - Font files are not yet present locally.
-- Browser and accessibility automation remain future QA work.
+- Browser, responsive, and assistive-technology validation remain future QA work.
+- Figma property mappings listed as under review have not been converted into a public component API.
 
 ## Suggested Commit Sequence
 
-1. `feat: add editorial content components`
-2. `feat: add experience and event content patterns`
-3. `feat: add metadata context highlight and partner groups`
-4. `feat: add content CTA and media variants`
-5. `feat: add content component reference route`
-6. `test: add content component audit`
-7. `docs: document content component architecture`
+1. `feat: add hero and editorial section compositions`
+2. `feat: add experience and event compositions`
+3. `feat: add media cultural and reflection compositions`
+4. `feat: add partner registration FAQ and closing compositions`
+5. `feat: add section composition reference route`
+6. `test: add composition audit`
+7. `docs: document section composition architecture`
 
-## Definition Of Done For 009.4
+## Definition Of Done For 009.5
 
-- Figma node `47:264` was inspected in read-only mode.
-- Verified content families exist in `src/styles/content/`.
-- `/dev/content-components/` exists and is excluded from public navigation.
-- FAQ group was not invented.
-- Experience Item and Event Detail review status is documented.
-- Optional-region and long-content specimens exist.
-- `npm run content:check` passes.
+- Figma node `73:760` was inspected in read-only mode.
+- Verified composition families exist in `src/styles/compositions/`.
+- `/dev/compositions/` exists and is excluded from public navigation.
+- All required composition specimens are represented with placeholder-only content.
+- Public routes remain unassembled shell placeholders.
+- FAQ & Visitor Guidance is implemented without inventing a FAQ content component.
+- Experience Item, Event Detail, and composition property review status is documented.
+- Optional-region, missing-content, long-content, responsive, and 320px specimens exist.
+- `npm run compositions:check` passes.
 - `npm run check` passes.
-- Building Block 009.5 has not started.
+- Building Block 009.6 has not started.
 
 ## Next Building Block
 
-009.5 — Section Compositions
+009.6 — Home Page Implementation
