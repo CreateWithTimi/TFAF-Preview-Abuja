@@ -4,11 +4,11 @@
 
 Things Fall Apart Festival 2026 — Abuja Preview Experience is a framework-free, static, multi-page frontend project for the approved festival preview website.
 
-The current public pages are engineering placeholders only. They are not the final visual implementation and must not be treated as organizer-approved public content.
+The Home page is assembled with approved structure and placeholder-governed copy. Festival, Experience, and Visit remain engineering placeholders and must not be treated as organizer-approved public content.
 
 ## Current Engineering Phase
 
-009.5 — Section Compositions
+009.6 — Home Page Implementation
 
 ## Technology Stack
 
@@ -21,7 +21,7 @@ The current public pages are engineering placeholders only. They are not the fin
 - Prettier
 - EditorConfig
 
-No React, TypeScript, Tailwind CSS, Sass, CMS, backend, analytics, registration service, final page implementation, or public page assembly is included in this phase.
+No React, TypeScript, Tailwind CSS, Sass, CMS, backend, analytics, registration service, or non-Home public page assembly is included in this phase.
 
 ## Local Installation
 
@@ -29,7 +29,7 @@ No React, TypeScript, Tailwind CSS, Sass, CMS, backend, analytics, registration 
 npm install
 ```
 
-No environment variables are required for 009.5.
+No environment variables are required for 009.6.
 
 ## Development Commands
 
@@ -44,16 +44,17 @@ npm run tokens:check
 npm run components:check
 npm run content:check
 npm run compositions:check
+npm run home:check
 npm run check
 ```
 
-`npm run check` runs linting, formatting verification, token validation, shared-component validation, content-component validation, section-composition validation, and the production build.
+`npm run check` runs linting, formatting verification, token validation, shared-component validation, content-component validation, section-composition validation, Home page validation, and the production build.
 
 ## Route Inventory
 
 Public routes:
 
-- `/` — Things Fall Apart Festival — Abuja Preview Experience
+- `/` — Assembled Home page for Things Fall Apart Festival — Abuja Preview Experience
 - `/festival/` — Festival
 - `/experience/` — The Experience
 - `/visit/` — Plan Your Visit
@@ -64,6 +65,8 @@ Development-only route:
 - `/dev/components/` — Development shared-components reference
 - `/dev/content-components/` — Development content-components reference
 - `/dev/compositions/` — Development section-compositions reference
+
+Only the Home route has been assembled. Festival, Experience, and Visit remain placeholders.
 
 Development routes are not public festival routes and must not be added to public navigation, footer navigation, sitemap, or public page architecture.
 
@@ -245,6 +248,12 @@ Run section-composition validation with:
 npm run compositions:check
 ```
 
+Run Home page validation with:
+
+```sh
+npm run home:check
+```
+
 ## Dark-Mode Policy
 
 Light mode is the default `:root` semantic mapping. Dark mode is available only through explicit scoping with:
@@ -413,6 +422,89 @@ Review-status notes:
 - `content/event-detail` property mapping remains under review.
 - Composition boolean property names remain under review.
 
+## Home Page Implementation
+
+Building Block 009.6 assembles only the public Home route (`/`). It introduces and orients visitors, establishes the Abuja Preview Experience, previews the theme and Experience, surfaces one featured-chapter placeholder, summarizes event information, and keeps registration as an unresolved placeholder action.
+
+Figma sources:
+
+- `102:3490` — Desktop Page Assembly
+- `112:4378` — Tablet and Mobile Page Assembly plus 320px validation evidence
+- `117:7001` — Page-Level Validation and Engineering Handoff
+
+Approved Home H1:
+
+```text
+The First Chapter Begins in Abuja
+```
+
+Approved Home sequence:
+
+1. Global Header
+2. Editorial Split Hero
+3. Festival Introduction
+4. Theme Preview
+5. Experience Overview
+6. Featured Chapter
+7. Event Information Summary
+8. Registration Interest
+9. Closing Composition
+10. Global Footer
+
+Conditional sections omitted for 009.6:
+
+- Cultural Context
+- Partners
+
+Absent from the approved Home assembly:
+
+- Highlights
+- Quotation
+
+Home CTA destinations:
+
+- `Explore the Experience` → `/experience/`
+- `Plan Your Visit` → `/visit/`
+- `Discover the Festival` → `/festival/`
+- `Explore the Festival Theme` → `/festival/`
+- `Register Interest` → no live destination until organizer approval
+
+Registration placeholder strategy:
+
+- The Home registration CTA uses a disabled native button with explanatory status text.
+- No `/register/`, `href="#"`, fake success state, countdown, ticket price, scarcity, or urgency language is allowed.
+- Production must not ship a misleading registration action.
+
+Featured-chapter placeholder strategy:
+
+- The official featured chapter is not approved.
+- The Home page uses an approved chapter title with a visible pending-approval status note.
+- The temporary action links to `/experience/`, not an unconfirmed chapter anchor.
+
+Home surface rhythm:
+
+- Default: Header, Hero, Theme Preview, Featured Chapter, Event Information, Closing
+- Subtle: Festival Introduction, Experience Overview, Footer
+- Inverse: Registration CTA
+
+Responsive behaviour:
+
+- Desktop follows the 1280px Home assembly.
+- Tablet uses reduced spacing and keeps inline navigation while it fits.
+- Mobile uses the compact disclosure navigation and stacked section layouts.
+- 320px remains the narrow reflow validation target.
+
+Home page CSS boundary:
+
+- `src/styles/pages/home.css` may only control Home section relationships and page-level adjustments around existing components/compositions.
+- It must not duplicate shared, content, or composition styling.
+
+Public placeholder-content policy:
+
+- Use approved text where available.
+- Unapproved content remains neutral and marked with source comments or restrained visitor-facing status where necessary.
+- Do not invent final organizer copy, event facts, venue details, partner content, photography, or registration behaviour.
+
 ## Progressive Enhancement
 
 HTML provides the primary experience. CSS provides approved global foundations. Public header, footer, navigation links, page content, and Experience chapter anchors are present in the document before JavaScript runs.
@@ -422,6 +514,8 @@ The mobile navigation uses an inline-disclosure enhancement: it is visible by de
 Content components introduce no new JavaScript. All content-component text, sequencing, media placeholders, event details, partner marks, and CTA placeholders are present in semantic HTML.
 
 Section compositions introduce no new JavaScript. `/dev/compositions/` is fully static HTML, and its layout is controlled by CSS only. Accordions retain the native 009.3 fallback behaviour.
+
+The Home page introduces no Home-specific JavaScript. Home content, links, event details, registration placeholder, header, and footer are present in HTML and remain readable without JavaScript.
 
 ## Shared Header And Footer
 
@@ -460,43 +554,43 @@ Do not create `yarn.lock`, `pnpm-lock.yaml`, `bun.lock`, or `bun.lockb`.
 Recommended working branch:
 
 ```text
-build/009-5-section-compositions
+build/009-6-home-page
 ```
 
 ## Current Limitations
 
-- Public pages remain engineering placeholders.
-- Shared, content, and section-composition foundations have been built, but final public page assembly has not started.
-- Final page assembly, form flows, registration, final media assets, final FAQ copy, and final page-level content ordering are not implemented.
+- Home is the first assembled public page.
+- Festival, Experience, and Visit remain placeholders.
+- Form flows, registration, final media assets, final FAQ copy, and remaining page-level assemblies are not implemented.
 - No production image assets, analytics, registration, backend, CMS, Rive, or animation sequences are included.
 - Font files are not yet present locally.
 - Browser, responsive, and assistive-technology validation remain future QA work.
+- Browser server binding may be unavailable in the Codex sandbox; report live-validation limits honestly.
 - Figma property mappings listed as under review have not been converted into a public component API.
 
 ## Suggested Commit Sequence
 
-1. `feat: add hero and editorial section compositions`
-2. `feat: add experience and event compositions`
-3. `feat: add media cultural and reflection compositions`
-4. `feat: add partner registration FAQ and closing compositions`
-5. `feat: add section composition reference route`
-6. `test: add composition audit`
-7. `docs: document section composition architecture`
+1. `feat: implement responsive Home page`
+2. `test: add Home page audit`
+3. `docs: document Home page implementation`
 
-## Definition Of Done For 009.5
+## Definition Of Done For 009.6
 
-- Figma node `73:760` was inspected in read-only mode.
-- Verified composition families exist in `src/styles/compositions/`.
-- `/dev/compositions/` exists and is excluded from public navigation.
-- All required composition specimens are represented with placeholder-only content.
-- Public routes remain unassembled shell placeholders.
-- FAQ & Visitor Guidance is implemented without inventing a FAQ content component.
-- Experience Item, Event Detail, and composition property review status is documented.
-- Optional-region, missing-content, long-content, responsive, and 320px specimens exist.
-- `npm run compositions:check` passes.
+- Figma Home sources were inspected in read-only mode.
+- Home route is assembled.
+- Home contains one approved H1.
+- Required Home sequence is implemented.
+- Conditional Cultural Context and Partners are omitted for this initial implementation.
+- Highlights and Quotation are absent.
+- Existing shared, content, and composition systems are reused.
+- Registration remains unresolved and non-misleading.
+- Event placeholders remain `To be confirmed` and `Abuja`.
+- Festival, Experience, and Visit remain placeholders.
+- Experience anchors remain intact.
+- `npm run home:check` passes.
 - `npm run check` passes.
-- Building Block 009.6 has not started.
+- Building Block 009.7 has not started.
 
 ## Next Building Block
 
-009.6 — Home Page Implementation
+009.7 — Festival Page Implementation

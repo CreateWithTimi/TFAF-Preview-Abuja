@@ -155,8 +155,9 @@ for (const [id, title] of expectedChapters) {
 const root = await read("index.html");
 record(
   root.includes("The First Chapter Begins in Abuja") &&
-    root.includes("Project foundation only"),
-  "index.html: approved placeholder content changed",
+    root.includes('id="home-hero"') &&
+    root.includes('id="registration-interest"'),
+  "index.html: approved Home content changed",
 );
 
 const festival = await read("festival/index.html");

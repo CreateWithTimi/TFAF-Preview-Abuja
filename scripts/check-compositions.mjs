@@ -278,9 +278,10 @@ for (const page of publicPages) {
     `${page}: does not contain exactly one main-content ID`,
   );
   record(
-    !content.includes("composition-hero") &&
-      !content.includes("composition-experience-journey") &&
-      !content.includes("composition-registration-cta"),
+    page === "index.html" ||
+      (!content.includes("composition-hero") &&
+        !content.includes("composition-experience-journey") &&
+        !content.includes("composition-registration-cta")),
     `${page}: appears to contain public page composition assembly`,
   );
   record(
