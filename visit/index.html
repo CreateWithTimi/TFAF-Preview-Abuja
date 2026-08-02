@@ -6,10 +6,10 @@
     <title>Visit | Things Fall Apart Festival</title>
     <meta
       name="description"
-      content="Engineering placeholder for the Visit route in the Things Fall Apart Festival website foundation."
+      content="Placeholder description for the Things Fall Apart Festival Visit page. Final approved SEO copy is pending organizer approval."
     />
     <!-- TODO: Add canonical URL when the production domain is approved. -->
-    <!-- TODO: Add theme-color after 007.1 design token mapping is approved. -->
+    <!-- TODO: Add theme-color after final browser UI colour approval. -->
     <link rel="stylesheet" href="/src/styles/main.css" />
   </head>
   <body>
@@ -105,15 +105,246 @@
     </header>
 
     <main id="main-content">
-      <section class="page-section">
-        <div class="page-container page-stack">
-          <h1 class="type-heading-1">Plan Your Visit</h1>
-          <dl class="event-details event-information-placeholder">
-            <div class="event-details__item">
-              <dt class="event-details__term">Location:</dt>
-              <dd class="event-details__description">Abuja</dd>
+      <section
+        class="composition composition-hero composition-hero--minimal visit-section visit-hero"
+        id="visit-hero"
+        aria-labelledby="visit-heading"
+      >
+        <div class="composition__inner composition__stack">
+          <div class="composition__content">
+            <p class="content-eyebrow">Visit</p>
+            <h1 id="visit-heading" class="composition-hero__heading">
+              Plan Your Visit
+            </h1>
+            <p class="composition-hero__lead">
+              Practical information for attending the Abuja Preview Experience.
+            </p>
+            <dl class="content-metadata-group content-metadata-group--grid">
+              <div class="content-metadata-item content-metadata-item--stacked">
+                <dt class="content-metadata-item__label">Location</dt>
+                <dd class="content-metadata-item__value">Abuja</dd>
+              </div>
+            </dl>
+            <div class="composition__actions">
+              <a class="button button--primary" href="/experience/">
+                Explore the Experience
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="composition composition-event-information visit-section"
+        id="event-information"
+        aria-labelledby="event-information-heading"
+      >
+        <div class="composition__inner composition-event-information__body">
+          <header class="section-header">
+            <p class="content-eyebrow">Details</p>
+            <div class="section-header__content">
+              <h2
+                id="event-information-heading"
+                class="section-header__heading"
+              >
+                Event Information
+              </h2>
+              <p class="section-header__description">
+                Everything you need to know.
+              </p>
+            </div>
+          </header>
+          <dl
+            class="event-detail-group event-detail-group--contained event-detail-group--four-column"
+          >
+            <div class="event-detail">
+              <dt class="event-detail__label">Date</dt>
+              <dd class="event-detail__value">To be confirmed</dd>
+            </div>
+            <div class="event-detail">
+              <dt class="event-detail__label">Time</dt>
+              <dd class="event-detail__value">To be confirmed</dd>
+            </div>
+            <div class="event-detail">
+              <dt class="event-detail__label">Venue</dt>
+              <dd class="event-detail__value">To be confirmed</dd>
+            </div>
+            <div class="event-detail">
+              <dt class="event-detail__label">Location</dt>
+              <dd class="event-detail__value">Abuja</dd>
             </div>
           </dl>
+        </div>
+      </section>
+
+      <section
+        class="composition composition-faq-visitor-guidance visit-section"
+        id="visitor-guidance"
+        aria-labelledby="visitor-guidance-heading"
+      >
+        <div class="composition__inner composition-faq-visitor-guidance__body">
+          <header class="section-header">
+            <p class="content-eyebrow">Guidance</p>
+            <div class="section-header__content">
+              <h2 id="visitor-guidance-heading" class="section-header__heading">
+                Visitor Guidance
+              </h2>
+              <p class="section-header__description">
+                Visitor guidance requires organizer approval.
+              </p>
+            </div>
+          </header>
+          <div class="context-note">
+            <p class="context-note__label">Visitor Guidance</p>
+            <!-- PLACEHOLDER — VISITOR GUIDANCE REQUIRES ORGANIZER APPROVAL -->
+            <p class="context-note__body">
+              Organizer-approved practical guidance will be added here.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="composition composition-editorial-media visit-section"
+        id="venue-media"
+        aria-labelledby="venue-media-heading"
+      >
+        <div
+          class="composition__inner composition__split composition__split--media-right"
+        >
+          <div class="composition__content">
+            <header class="section-header">
+              <p class="content-eyebrow">Venue</p>
+              <div class="section-header__content">
+                <h2 id="venue-media-heading" class="section-header__heading">
+                  Venue
+                </h2>
+                <p class="section-header__description">
+                  Venue media and details are pending organizer approval.
+                </p>
+              </div>
+            </header>
+            <!-- CONDITIONAL CONTENT — FINAL VENUE MEDIA REQUIRES ORGANIZER APPROVAL -->
+            <p class="visit-placeholder-copy">
+              Venue description will be added after organizer confirmation.
+            </p>
+          </div>
+          <figure
+            class="composition__media content-media-placeholder content-media-placeholder--ratio-4-3"
+          >
+            <div class="content-media-placeholder__frame">
+              <span class="content-media-placeholder__type"
+                >Venue media placeholder</span
+              >
+            </div>
+            <figcaption class="content-media-placeholder__caption">
+              Venue media caption pending organizer approval.
+            </figcaption>
+            <p class="content-media-placeholder__credit">
+              Venue media credit pending organizer approval.
+            </p>
+          </figure>
+        </div>
+      </section>
+
+      <section
+        class="composition composition-faq-visitor-guidance composition--subtle visit-section"
+        id="frequently-asked-questions"
+        aria-labelledby="faq-heading"
+      >
+        <div class="composition__inner composition__stack">
+          <header class="section-header">
+            <p class="content-eyebrow">FAQ</p>
+            <div class="section-header__content">
+              <h2 id="faq-heading" class="section-header__heading">
+                Frequently Asked Questions
+              </h2>
+              <p class="section-header__description">
+                Common questions about the event.
+              </p>
+            </div>
+          </header>
+          <div class="accordion" data-accordion>
+            <details class="accordion__item">
+              <!-- PLACEHOLDER — FAQ CONTENT REQUIRES ORGANIZER APPROVAL -->
+              <summary class="accordion__summary">
+                Placeholder question requiring organizer approval
+              </summary>
+              <div class="accordion__content">
+                <p>Placeholder answer requiring organizer approval.</p>
+              </div>
+            </details>
+            <details class="accordion__item">
+              <!-- PLACEHOLDER — FAQ CONTENT REQUIRES ORGANIZER APPROVAL -->
+              <summary class="accordion__summary">
+                Placeholder question requiring organizer approval
+              </summary>
+              <div class="accordion__content">
+                <p>Placeholder answer requiring organizer approval.</p>
+              </div>
+            </details>
+            <details class="accordion__item">
+              <!-- PLACEHOLDER — FAQ CONTENT REQUIRES ORGANIZER APPROVAL -->
+              <summary class="accordion__summary">
+                Placeholder question requiring organizer approval
+              </summary>
+              <div class="accordion__content">
+                <p>Placeholder answer requiring organizer approval.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="composition composition-registration-cta composition--inverse visit-section"
+        id="registration-interest"
+        aria-labelledby="registration-interest-heading"
+      >
+        <div class="composition__inner">
+          <div
+            class="content-cta content-cta--centered content-cta--full-width"
+          >
+            <p class="content-eyebrow">Register</p>
+            <h2 id="registration-interest-heading" class="content-cta__heading">
+              Register Interest
+            </h2>
+            <p class="content-cta__copy">
+              Registration details will be confirmed by the organizers.
+            </p>
+            <div class="content-cta__actions">
+              <button class="button button--secondary" type="button" disabled>
+                Register Interest
+              </button>
+            </div>
+            <p class="content-cta__note status-label status-label--placeholder">
+              Destination pending organizer approval
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="composition composition-closing visit-section"
+        id="closing"
+        aria-labelledby="closing-heading"
+      >
+        <div class="composition__inner composition__stack">
+          <div class="composition__content">
+            <p class="content-eyebrow">Explore</p>
+            <h2 id="closing-heading" class="section-header__heading">
+              Things Fall Apart Festival
+            </h2>
+            <!-- PLACEHOLDER — ORGANIZER COPY REQUIRED -->
+            <p class="visit-placeholder-copy">
+              Closing Visit copy remains pending organizer approval.
+            </p>
+            <div class="composition__actions">
+              <a class="button button--primary" href="/experience/">
+                Explore the Experience
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </main>

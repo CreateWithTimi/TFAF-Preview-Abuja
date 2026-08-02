@@ -4,11 +4,11 @@
 
 Things Fall Apart Festival 2026 — Abuja Preview Experience is a framework-free, static, multi-page frontend project for the approved festival preview website.
 
-The Home, Festival, and Experience pages are assembled with approved structure and placeholder-governed copy. Visit remains an engineering placeholder and must not be treated as organizer-approved public content.
+All four public pages are assembled with approved structure and placeholder-governed copy. The current pages still contain organizer-review placeholders and must not be treated as final public content.
 
 ## Current Engineering Phase
 
-009.8 — Experience Page Implementation
+009.9 — Visit Page Implementation
 
 ## Technology Stack
 
@@ -21,7 +21,7 @@ The Home, Festival, and Experience pages are assembled with approved structure a
 - Prettier
 - EditorConfig
 
-No React, TypeScript, Tailwind CSS, Sass, CMS, backend, analytics, registration service, or Visit page assembly is included in this phase.
+No React, TypeScript, Tailwind CSS, Sass, CMS, backend, analytics, registration service, or responsive-hardening work is included in this phase.
 
 ## Local Installation
 
@@ -29,7 +29,7 @@ No React, TypeScript, Tailwind CSS, Sass, CMS, backend, analytics, registration 
 npm install
 ```
 
-No environment variables are required for 009.8.
+No environment variables are required for 009.9.
 
 ## Development Commands
 
@@ -47,10 +47,11 @@ npm run compositions:check
 npm run home:check
 npm run festival:check
 npm run experience:check
+npm run visit:check
 npm run check
 ```
 
-`npm run check` runs linting, formatting verification, token validation, shared-component validation, content-component validation, section-composition validation, Home page validation, Festival page validation, Experience page validation, and the production build.
+`npm run check` runs linting, formatting verification, token validation, shared-component validation, content-component validation, section-composition validation, Home page validation, Festival page validation, Experience page validation, Visit page validation, and the production build.
 
 ## Route Inventory
 
@@ -59,7 +60,7 @@ Public routes:
 - `/` — Assembled Home page for Things Fall Apart Festival — Abuja Preview Experience
 - `/festival/` — Assembled Festival page
 - `/experience/` — Assembled Experience page
-- `/visit/` — Plan Your Visit
+- `/visit/` — Assembled Visit page
 
 Development-only route:
 
@@ -68,7 +69,7 @@ Development-only route:
 - `/dev/content-components/` — Development content-components reference
 - `/dev/compositions/` — Development section-compositions reference
 
-Only the Home, Festival, and Experience routes have been assembled. Visit remains a placeholder.
+All four public routes are assembled. Browser and interaction hardening remains pending.
 
 Development routes are not public festival routes and must not be added to public navigation, footer navigation, sitemap, or public page architecture.
 
@@ -268,6 +269,12 @@ Run Experience page validation with:
 npm run experience:check
 ```
 
+Run Visit page validation with:
+
+```sh
+npm run visit:check
+```
+
 ## Dark-Mode Policy
 
 Light mode is the default `:root` semantic mapping. Dark mode is available only through explicit scoping with:
@@ -420,9 +427,8 @@ Responsive composition strategy:
 
 Page-assembly boundary:
 
-- Home, Festival, and Experience have been assembled in their approved building blocks.
-- Visit remains a shell-level placeholder until 009.9.
-- Do not add hero, event, FAQ, CTA, or closing compositions to `/visit/` before 009.9.
+- Home, Festival, Experience, and Visit have been assembled in their approved building blocks.
+- Do not begin responsive-hardening or interaction-hardening changes before 009.10.
 - `/dev/compositions/` is a static specimen route only.
 
 FAQ composition strategy:
@@ -746,6 +752,121 @@ Browser-validation limitation:
 
 - Static audits do not replace browser, responsive, keyboard, screen-reader, browser-history, or assistive-technology validation.
 
+## Visit Page Implementation
+
+Building Block 009.9 assembles only the public Visit route (`/visit/`). It owns the practical attendance experience, presents approved event placeholders, provides visitor-focused guidance and venue-media placeholders, includes native FAQ disclosure, exposes registration interest honestly, and routes visitors back into the Experience.
+
+Figma sources:
+
+- `102:3490` — Desktop Page Assembly
+- `112:4378` — Tablet and Mobile Page Assembly plus 320px validation evidence
+- `117:7001` — Page-Level Validation and Engineering Handoff
+
+Approved Visit H1:
+
+```text
+Plan Your Visit
+```
+
+Approved Visit sequence:
+
+1. Global Header
+2. Visit Hero
+3. Event Information
+4. Visitor Guidance
+5. Venue Media
+6. FAQ
+7. Registration CTA
+8. Closing Composition
+9. Global Footer
+
+Approved event-value inventory:
+
+- Date: `To be confirmed`
+- Time: `To be confirmed`
+- Venue: `To be confirmed`
+- Location: `Abuja`
+
+Visitor Guidance semantic decision:
+
+- The section is named and marked up as practical `visitor-guidance`.
+- It does not use cultural-context, festival-context, or heritage-context naming.
+- Guidance copy remains placeholder-only and is marked in source with `PLACEHOLDER — VISITOR GUIDANCE REQUIRES ORGANIZER APPROVAL`.
+- No transport, parking, access-facility, arrival-time, security, venue-address, or policy details have been invented.
+
+Venue Media conditional status:
+
+- Venue Media is included because it appears in the approved Visit structure.
+- It uses neutral placeholder media, caption, credit, and venue copy.
+- The section is marked in source with `CONDITIONAL CONTENT — FINAL VENUE MEDIA REQUIRES ORGANIZER APPROVAL`.
+- Final venue media, caption, credit, and alt treatment remain organizer dependencies.
+
+FAQ semantic decision:
+
+- FAQ uses the existing native `details`/`summary` accordion structure from 009.3.
+- No new FAQ component family or custom Visit JavaScript is introduced.
+- Multiple FAQ items may remain open.
+- Structure: Implemented.
+- Content: Organizer Review.
+- Browser interaction validation: Required.
+
+Registration treatment:
+
+- Label: `Register Interest`
+- Note: `Registration details will be confirmed by the organizers.`
+- Destination: unconfirmed.
+- The CTA uses a disabled native button plus placeholder status text.
+- No `/register/`, `href="#"`, form, fake success state, ticket pricing, countdown, scarcity, urgency language, or registration logic is allowed.
+
+CTA reconciliation:
+
+- Hero: `Explore the Experience` → `/experience/`
+- Registration section: `Register Interest` → unresolved, non-interactive placeholder
+- Closing: `Explore the Experience` → `/experience/`
+- No fourth CTA or second post-registration CTA section is included.
+
+Omitted Visit sections:
+
+- Partners
+- Separate Cultural Context
+- Additional Editorial Media
+- Highlight Composition
+- Quotation and Reflection
+- Experience Summary
+- Secondary CTA section after registration
+
+Visit surface rhythm:
+
+- Default: Header, Visit Hero, Event Information, Visitor Guidance, Venue Media, Closing
+- Subtle: FAQ, Footer
+- Primary or inverse action treatment: Registration CTA
+
+Visit responsive behaviour:
+
+- Desktop follows the 1280px Visit assembly.
+- Tablet reduces event columns and stacks split relationships as needed.
+- Mobile uses stacked practical sections, one-column event details, native FAQ disclosures, and contained registration treatment.
+- 320px remains the narrow reflow validation target.
+- No required content is removed at narrow widths.
+
+Visit page CSS boundary:
+
+- `src/styles/pages/visit.css` controls only Visit page-level composition relationships, FAQ placement, and verified Visit-only responsive adjustments.
+- It must not duplicate accordion, event-detail, button, or composition styling and must not introduce raw colour literals.
+
+Visit organizer dependencies:
+
+- Visitor guidance content
+- FAQ questions and answers
+- Venue details
+- Venue media, caption, credit, and alt decisions
+- Registration destination
+- Production SEO metadata
+
+Browser-validation limitation:
+
+- Static audits do not replace browser, responsive, keyboard, screen-reader, FAQ interaction, or assistive-technology validation.
+
 ## Progressive Enhancement
 
 HTML provides the primary experience. CSS provides approved global foundations. Public header, footer, navigation links, page content, and Experience chapter anchors are present in the document before JavaScript runs.
@@ -761,6 +882,8 @@ The Home page introduces no Home-specific JavaScript. Home content, links, event
 The Festival page introduces no Festival-specific JavaScript. Festival content, links, theme treatment, media placeholders, registration placeholder, header, and footer are present in HTML and remain readable without JavaScript.
 
 The Experience page introduces no Experience-specific JavaScript. Chapter navigation, journey anchors, Visit links, registration placeholder, header, and footer are present in HTML and remain usable without JavaScript.
+
+The Visit page introduces no Visit-specific JavaScript. Event details, visitor guidance, venue media placeholders, native FAQ disclosure, registration placeholder, Experience links, header, and footer are present in HTML and remain usable without JavaScript.
 
 ## Shared Header And Footer
 
@@ -799,14 +922,13 @@ Do not create `yarn.lock`, `pnpm-lock.yaml`, `bun.lock`, or `bun.lockb`.
 Recommended working branch:
 
 ```text
-build/009-8-experience-page
+build/009-9-visit-page
 ```
 
 ## Current Limitations
 
-- Home, Festival, and Experience are the assembled public pages.
-- Visit remains a placeholder.
-- Form flows, registration, final media assets, final FAQ copy, and remaining page-level assemblies are not implemented.
+- All four public pages are assembled.
+- Form flows, registration, final media assets, final FAQ copy, and organizer-approved replacement content are not implemented.
 - No production image assets, analytics, registration, backend, CMS, Rive, or animation sequences are included.
 - Font files are not yet present locally.
 - Browser, responsive, and assistive-technology validation remain future QA work.
@@ -824,32 +946,35 @@ build/009-8-experience-page
 7. `feat: implement responsive Experience page`
 8. `test: add Experience page audit`
 9. `docs: document Experience page implementation`
+10. `feat: implement responsive Visit page`
+11. `test: add Visit page audit`
+12. `docs: document Visit page implementation`
 
-## Definition Of Done For 009.8
+## Definition Of Done For 009.9
 
-- Figma Experience sources were inspected in read-only mode.
-- Experience route is assembled.
-- Experience contains one placeholder H1.
-- Required Experience sequence is implemented.
-- Chapter navigation is labelled and native.
-- All seven chapter links exist.
-- All seven chapter IDs and titles exist in approved order.
-- Full Journey uses ordered semantics.
-- Compact step format is preserved.
-- No chapter is hidden.
-- Begin the Journey links to `#chapter-01`.
-- Plan Your Visit links to `/visit/`.
-- Dedicated Registration section is absent.
-- Quotation and Reflection, Highlight Composition, and extra Editorial Media are absent.
+- Figma Visit sources were inspected in read-only mode.
+- Visit route is assembled.
+- Visit contains one approved H1.
+- Required Visit sequence is implemented.
+- Event Information uses exactly the four approved values.
+- Visitor Guidance is implemented as practical guidance.
+- Venue Media is included conditionally.
+- FAQ uses native `details`/`summary`.
+- FAQ content remains placeholder-only.
+- Registration CTA is implemented.
+- Register Interest remains unresolved and non-misleading.
+- Closing Composition is implemented.
+- Explore the Experience links to `/experience/`.
+- No secondary CTA section after registration exists.
+- Partners, separate Cultural Context, additional Editorial Media, Highlight Composition, Quotation and Reflection, and Experience Summary are absent.
 - Existing shared, content, and composition systems are reused.
 - Registration remains unresolved and non-misleading.
-- No chapter copy, programme activity, final organizer copy, final media, or event details have been invented.
-- Home and Festival remain assembled.
-- Visit remains a placeholder.
-- `npm run experience:check` passes.
+- No event details, visitor guidance, FAQ claims, venue facts, final organizer copy, final media, or registration functionality have been invented.
+- Home, Festival, and Experience remain assembled.
+- `npm run visit:check` passes.
 - `npm run check` passes.
-- Building Block 009.9 has not started.
+- Building Block 009.10 has not started.
 
 ## Next Building Block
 
-009.9 — Visit Page Implementation
+009.10 — Responsive and Interaction Hardening
