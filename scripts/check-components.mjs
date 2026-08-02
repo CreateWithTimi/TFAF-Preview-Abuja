@@ -163,8 +163,11 @@ record(
 const festival = await read("festival/index.html");
 record(
   festival.includes("Festival") &&
-    festival.includes("PLACEHOLDER — COPY APPROVAL REQUIRED"),
-  "festival/index.html: approved placeholder content changed",
+    festival.includes(
+      "PLACEHOLDER — FINAL FESTIVAL H1 REQUIRES ORGANIZER APPROVAL",
+    ) &&
+    festival.includes('id="festival-hero"'),
+  "festival/index.html: approved Festival assembly changed",
 );
 
 const visit = await read("visit/index.html");

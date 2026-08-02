@@ -4,11 +4,11 @@
 
 Things Fall Apart Festival 2026 — Abuja Preview Experience is a framework-free, static, multi-page frontend project for the approved festival preview website.
 
-The Home page is assembled with approved structure and placeholder-governed copy. Festival, Experience, and Visit remain engineering placeholders and must not be treated as organizer-approved public content.
+The Home and Festival pages are assembled with approved structure and placeholder-governed copy. Experience and Visit remain engineering placeholders and must not be treated as organizer-approved public content.
 
 ## Current Engineering Phase
 
-009.6 — Home Page Implementation
+009.7 — Festival Page Implementation
 
 ## Technology Stack
 
@@ -21,7 +21,7 @@ The Home page is assembled with approved structure and placeholder-governed copy
 - Prettier
 - EditorConfig
 
-No React, TypeScript, Tailwind CSS, Sass, CMS, backend, analytics, registration service, or non-Home public page assembly is included in this phase.
+No React, TypeScript, Tailwind CSS, Sass, CMS, backend, analytics, registration service, or Experience/Visit page assembly is included in this phase.
 
 ## Local Installation
 
@@ -29,7 +29,7 @@ No React, TypeScript, Tailwind CSS, Sass, CMS, backend, analytics, registration 
 npm install
 ```
 
-No environment variables are required for 009.6.
+No environment variables are required for 009.7.
 
 ## Development Commands
 
@@ -45,17 +45,18 @@ npm run components:check
 npm run content:check
 npm run compositions:check
 npm run home:check
+npm run festival:check
 npm run check
 ```
 
-`npm run check` runs linting, formatting verification, token validation, shared-component validation, content-component validation, section-composition validation, Home page validation, and the production build.
+`npm run check` runs linting, formatting verification, token validation, shared-component validation, content-component validation, section-composition validation, Home page validation, Festival page validation, and the production build.
 
 ## Route Inventory
 
 Public routes:
 
 - `/` — Assembled Home page for Things Fall Apart Festival — Abuja Preview Experience
-- `/festival/` — Festival
+- `/festival/` — Assembled Festival page
 - `/experience/` — The Experience
 - `/visit/` — Plan Your Visit
 
@@ -66,7 +67,7 @@ Development-only route:
 - `/dev/content-components/` — Development content-components reference
 - `/dev/compositions/` — Development section-compositions reference
 
-Only the Home route has been assembled. Festival, Experience, and Visit remain placeholders.
+Only the Home and Festival routes have been assembled. Experience and Visit remain placeholders.
 
 Development routes are not public festival routes and must not be added to public navigation, footer navigation, sitemap, or public page architecture.
 
@@ -252,6 +253,12 @@ Run Home page validation with:
 
 ```sh
 npm run home:check
+```
+
+Run Festival page validation with:
+
+```sh
+npm run festival:check
 ```
 
 ## Dark-Mode Policy
@@ -505,6 +512,112 @@ Public placeholder-content policy:
 - Unapproved content remains neutral and marked with source comments or restrained visitor-facing status where necessary.
 - Do not invent final organizer copy, event facts, venue details, partner content, photography, or registration behaviour.
 
+## Festival Page Implementation
+
+Building Block 009.7 assembles only the public Festival route (`/festival/`). It explains the festival’s meaning, owns the full theme treatment, introduces the cultural proposition, includes conditionally retained editorial media, summarizes the Experience without rendering the complete journey, and keeps registration unresolved.
+
+Figma sources:
+
+- `102:3490` — Desktop Page Assembly
+- `112:4378` — Tablet and Mobile Page Assembly plus 320px validation evidence
+- `117:7001` — Page-Level Validation and Engineering Handoff
+
+Temporary Festival H1:
+
+```text
+Festival
+```
+
+The final Festival H1 remains unresolved and requires organizer approval. The HTML keeps a source comment beside the H1: `PLACEHOLDER — FINAL FESTIVAL H1 REQUIRES ORGANIZER APPROVAL`.
+
+Approved Festival sequence:
+
+1. Global Header
+2. Festival Hero
+3. Editorial Introduction
+4. Full Theme Exploration
+5. Cultural Context
+6. Editorial Media
+7. Experience Summary
+8. Registration CTA
+9. Closing Composition
+10. Global Footer
+
+Editorial Media decision:
+
+- Editorial Media is conditionally included because it appears in the desktop, tablet, and mobile Festival specimens.
+- It uses approved placeholder media, caption, and credit treatment.
+- The section is marked in source with `CONDITIONAL SECTION — REMOVE IF FINAL MEDIA IS NOT APPROVED`.
+
+Omitted sections:
+
+- Highlights
+- Quotation and Reflection
+- Partners
+- Additional media sections beyond the approved Editorial Media region
+
+Theme ownership:
+
+- Festival owns the full `NAMED. UNNAMED. RENAMED.` treatment.
+- The supporting statement is `Power, Identity and the Right to Self-Definition`.
+- The theme statement remains real HTML text and is not treated as another H1.
+
+Cultural Context ownership:
+
+- Festival owns the complete Cultural Context treatment.
+- All cultural and historical claims remain organizer-review dependencies.
+- No factual cultural claims, literary interpretation, quotations, or final media have been invented.
+
+Experience Summary order:
+
+- The Festival summary uses one stable source order across all widths: `Arrival & Cultural Immersion`, `Memory Wall`, `Centre for Memories`.
+- This follows the canonical approved chapter numbering while documenting that desktop and responsive Figma specimens showed inconsistent summary ordering.
+- The full seven-chapter journey remains reserved for the Experience page.
+
+Festival CTA destinations:
+
+- `Explore the Seven Chapters` → `/experience/`
+- `Explore the Experience` → `/experience/`
+- `Plan Your Visit` → `/visit/`
+- `Register Interest` → no live destination until organizer approval
+
+Registration constraints:
+
+- No `/register/`, `href="#"`, form, fake submit action, countdown, ticket price, scarcity, urgency language, or fake success state.
+- The CTA uses a disabled native button with explanatory status text.
+
+Festival surface rhythm:
+
+- Default: Header, Festival Hero, Editorial Introduction, Cultural Context, Experience Summary, Closing
+- Subtle: Full Theme Exploration, Editorial Media, Footer
+- Inverse: Registration CTA
+
+Festival responsive behaviour:
+
+- Desktop follows the 1280px Festival assembly.
+- Tablet uses reduced spacing, compact sequences, and keeps inline navigation only while it fits.
+- Mobile uses the compact disclosure navigation and stacked section layouts.
+- 320px remains the narrow reflow validation target.
+- No required content is removed at narrower widths.
+
+Festival page CSS boundary:
+
+- `src/styles/pages/festival.css` controls only Festival page-level section relationships and verified page-specific adjustments.
+- It must not duplicate shared, content, or composition styling and must not introduce raw colour literals.
+
+Outstanding organizer dependencies:
+
+- Final Festival H1
+- Festival editorial copy
+- Cultural-context copy and factual review
+- Final media, captions, credits, and alt decisions
+- Registration destination
+- Production SEO metadata
+
+Browser-validation limitation:
+
+- Static audits do not replace browser, responsive, keyboard, screen-reader, or assistive-technology validation.
+
 ## Progressive Enhancement
 
 HTML provides the primary experience. CSS provides approved global foundations. Public header, footer, navigation links, page content, and Experience chapter anchors are present in the document before JavaScript runs.
@@ -516,6 +629,8 @@ Content components introduce no new JavaScript. All content-component text, sequ
 Section compositions introduce no new JavaScript. `/dev/compositions/` is fully static HTML, and its layout is controlled by CSS only. Accordions retain the native 009.3 fallback behaviour.
 
 The Home page introduces no Home-specific JavaScript. Home content, links, event details, registration placeholder, header, and footer are present in HTML and remain readable without JavaScript.
+
+The Festival page introduces no Festival-specific JavaScript. Festival content, links, theme treatment, media placeholders, registration placeholder, header, and footer are present in HTML and remain readable without JavaScript.
 
 ## Shared Header And Footer
 
@@ -554,13 +669,13 @@ Do not create `yarn.lock`, `pnpm-lock.yaml`, `bun.lock`, or `bun.lockb`.
 Recommended working branch:
 
 ```text
-build/009-6-home-page
+build/009-7-festival-page
 ```
 
 ## Current Limitations
 
-- Home is the first assembled public page.
-- Festival, Experience, and Visit remain placeholders.
+- Home and Festival are the assembled public pages.
+- Experience and Visit remain placeholders.
 - Form flows, registration, final media assets, final FAQ copy, and remaining page-level assemblies are not implemented.
 - No production image assets, analytics, registration, backend, CMS, Rive, or animation sequences are included.
 - Font files are not yet present locally.
@@ -573,24 +688,29 @@ build/009-6-home-page
 1. `feat: implement responsive Home page`
 2. `test: add Home page audit`
 3. `docs: document Home page implementation`
+4. `feat: implement responsive Festival page`
+5. `test: add Festival page audit`
+6. `docs: document Festival page implementation`
 
-## Definition Of Done For 009.6
+## Definition Of Done For 009.7
 
-- Figma Home sources were inspected in read-only mode.
-- Home route is assembled.
-- Home contains one approved H1.
-- Required Home sequence is implemented.
-- Conditional Cultural Context and Partners are omitted for this initial implementation.
-- Highlights and Quotation are absent.
+- Figma Festival sources were inspected in read-only mode.
+- Festival route is assembled.
+- Festival contains one placeholder H1.
+- Required Festival sequence is implemented.
+- Editorial Media is included conditionally.
+- Highlights, Quotation and Reflection, Partners, and additional media sections are absent.
 - Existing shared, content, and composition systems are reused.
+- Theme statement uses approved text and is not another H1.
 - Registration remains unresolved and non-misleading.
-- Event placeholders remain `To be confirmed` and `Abuja`.
-- Festival, Experience, and Visit remain placeholders.
+- No cultural facts, final organizer copy, final media, or event details have been invented.
+- Home remains assembled.
+- Experience and Visit remain placeholders.
 - Experience anchors remain intact.
-- `npm run home:check` passes.
+- `npm run festival:check` passes.
 - `npm run check` passes.
-- Building Block 009.7 has not started.
+- Building Block 009.8 has not started.
 
 ## Next Building Block
 
-009.7 — Festival Page Implementation
+009.8 — Experience Page Implementation
