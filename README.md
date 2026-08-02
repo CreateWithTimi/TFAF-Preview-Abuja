@@ -4,11 +4,11 @@
 
 Things Fall Apart Festival 2026 — Abuja Preview Experience is a framework-free, static, multi-page frontend project for the approved festival preview website.
 
-The Home and Festival pages are assembled with approved structure and placeholder-governed copy. Experience and Visit remain engineering placeholders and must not be treated as organizer-approved public content.
+The Home, Festival, and Experience pages are assembled with approved structure and placeholder-governed copy. Visit remains an engineering placeholder and must not be treated as organizer-approved public content.
 
 ## Current Engineering Phase
 
-009.7 — Festival Page Implementation
+009.8 — Experience Page Implementation
 
 ## Technology Stack
 
@@ -21,7 +21,7 @@ The Home and Festival pages are assembled with approved structure and placeholde
 - Prettier
 - EditorConfig
 
-No React, TypeScript, Tailwind CSS, Sass, CMS, backend, analytics, registration service, or Experience/Visit page assembly is included in this phase.
+No React, TypeScript, Tailwind CSS, Sass, CMS, backend, analytics, registration service, or Visit page assembly is included in this phase.
 
 ## Local Installation
 
@@ -29,7 +29,7 @@ No React, TypeScript, Tailwind CSS, Sass, CMS, backend, analytics, registration 
 npm install
 ```
 
-No environment variables are required for 009.7.
+No environment variables are required for 009.8.
 
 ## Development Commands
 
@@ -46,10 +46,11 @@ npm run content:check
 npm run compositions:check
 npm run home:check
 npm run festival:check
+npm run experience:check
 npm run check
 ```
 
-`npm run check` runs linting, formatting verification, token validation, shared-component validation, content-component validation, section-composition validation, Home page validation, Festival page validation, and the production build.
+`npm run check` runs linting, formatting verification, token validation, shared-component validation, content-component validation, section-composition validation, Home page validation, Festival page validation, Experience page validation, and the production build.
 
 ## Route Inventory
 
@@ -57,7 +58,7 @@ Public routes:
 
 - `/` — Assembled Home page for Things Fall Apart Festival — Abuja Preview Experience
 - `/festival/` — Assembled Festival page
-- `/experience/` — The Experience
+- `/experience/` — Assembled Experience page
 - `/visit/` — Plan Your Visit
 
 Development-only route:
@@ -67,7 +68,7 @@ Development-only route:
 - `/dev/content-components/` — Development content-components reference
 - `/dev/compositions/` — Development section-compositions reference
 
-Only the Home and Festival routes have been assembled. Experience and Visit remain placeholders.
+Only the Home, Festival, and Experience routes have been assembled. Visit remains a placeholder.
 
 Development routes are not public festival routes and must not be added to public navigation, footer navigation, sitemap, or public page architecture.
 
@@ -261,6 +262,12 @@ Run Festival page validation with:
 npm run festival:check
 ```
 
+Run Experience page validation with:
+
+```sh
+npm run experience:check
+```
+
 ## Dark-Mode Policy
 
 Light mode is the default `:root` semantic mapping. Dark mode is available only through explicit scoping with:
@@ -411,10 +418,11 @@ Responsive composition strategy:
 - Split layouts stack, grids wrap, event details reduce columns, CTA actions stack, and journey content remains sequential.
 - Browser validation is still required before claiming final responsive approval.
 
-No-page-assembly boundary:
+Page-assembly boundary:
 
-- Public routes remain shell-level placeholders.
-- Do not add hero, theme, journey, event, FAQ, CTA, or closing compositions to `/`, `/festival/`, `/experience/`, or `/visit/` until 009.6 or later.
+- Home, Festival, and Experience have been assembled in their approved building blocks.
+- Visit remains a shell-level placeholder until 009.9.
+- Do not add hero, event, FAQ, CTA, or closing compositions to `/visit/` before 009.9.
 - `/dev/compositions/` is a static specimen route only.
 
 FAQ composition strategy:
@@ -618,6 +626,126 @@ Browser-validation limitation:
 
 - Static audits do not replace browser, responsive, keyboard, screen-reader, or assistive-technology validation.
 
+## Experience Page Implementation
+
+Building Block 009.8 assembles only the public Experience route (`/experience/`). It introduces the visitor experience, provides native chapter navigation, presents the complete seven-chapter journey in approved order, and guides visitors toward practical Visit information while keeping registration secondary and unresolved.
+
+Figma sources:
+
+- `102:3490` — Desktop Page Assembly
+- `112:4378` — Tablet and Mobile Page Assembly plus 320px validation evidence
+- `117:7001` — Page-Level Validation and Engineering Handoff
+
+Temporary Experience H1:
+
+```text
+The Experience
+```
+
+The final Experience H1 remains unresolved and requires organizer approval. The HTML keeps a source comment beside the H1: `PLACEHOLDER — FINAL EXPERIENCE H1 REQUIRES ORGANIZER APPROVAL`.
+
+Approved Experience sequence:
+
+1. Global Header
+2. Experience Hero
+3. Experience Overview
+4. Chapter Navigation
+5. Full Seven-Chapter Journey
+6. Plan Your Visit CTA
+7. Closing Composition
+8. Global Footer
+
+Hero CTA reconciliation:
+
+- `Begin the Journey` → `#chapter-01`
+- `Plan Your Visit` → `/visit/`
+
+The handoff page inventory lists Visit and registration actions for Experience, while the page specimens show the hero journey-start action. The implemented reconciliation preserves the visitor flow: enter journey, explore chapters, then plan attendance.
+
+Chapter navigation strategy:
+
+- A labelled secondary navigation landmark uses `aria-label="Experience chapters"`.
+- All chapter links are native fragment links.
+- No JavaScript, scroll-spy, active tracking, fake buttons, or horizontal-scroll-only navigation is used.
+- Labels remain readable and wrap at narrow widths.
+
+Exact chapter inventory and IDs:
+
+- `chapter-01` — 01 — Arrival & Cultural Immersion
+- `chapter-02` — 02 — Memory Wall
+- `chapter-03` — 03 — Centre for Memories
+- `chapter-04` — 04 — Theme Conversation
+- `chapter-05` — 05 — Clan Wars
+- `chapter-06` — 06 — Learn the Dance
+- `chapter-07` — 07 — Books & Merchandise
+
+Native-anchor behaviour:
+
+- `#chapter-01` through `#chapter-07` are stable fragment targets in normal document flow.
+- Direct URL loading, browser Back/Forward fragment history, and no-JavaScript navigation are implementation requirements.
+- No forced focus movement or smooth-scrolling script is added.
+
+Journey semantic decision:
+
+- The full journey uses an ordered list.
+- Each chapter is one list item with its approved ID, visible number, and visible title.
+- Decorative connectors are hidden from assistive technology.
+- Chapter descriptions, metadata, media, context notes, and actions are omitted until approved.
+
+Compact step-format decision:
+
+- The journey uses the verified compact `content/experience-item` structure.
+- Because `content/experience-item` property mapping remains under review, the page uses only existing verified classes and semantic markup rather than inventing new boolean APIs.
+
+Omitted Experience sections:
+
+- Quotation and Reflection
+- Highlight Composition
+- Extra Editorial Media
+- Dedicated Registration CTA section
+
+Post-journey CTA strategy:
+
+- Primary action: `Plan Your Visit` → `/visit/`
+- Secondary registration treatment: disabled `Register Interest` placeholder with `Registration details will be confirmed by the organizers.`
+- No `/register/`, `href="#"`, fake form, fake success state, countdown, urgency, or ticket pricing is allowed.
+
+Experience surface rhythm:
+
+- Orientation zone: Hero, Overview, Chapter Navigation
+- Journey zone: continuous seven-chapter sequence without mechanical chapter striping
+- Post-journey action: inverse CTA treatment
+- Closing and footer preserve established global rhythm
+
+Experience responsive behaviour:
+
+- Desktop follows the 1280px Experience assembly.
+- Tablet uses reduced spacing and wrapped chapter navigation.
+- Mobile stacks the hero, overview, navigation, journey, CTA, and closing.
+- 320px remains the narrow reflow validation target.
+- No chapter is removed at any width.
+
+Experience page CSS boundary:
+
+- `src/styles/pages/experience.css` controls only Experience page-level section relationships, chapter-navigation integration, journey list relationships, and verified page-specific adjustments.
+- It must not duplicate shared buttons, content experience-item styling, or composition styling and must not introduce raw colour literals.
+
+Experience organizer dependencies:
+
+- Final Experience H1
+- Overview copy
+- Chapter descriptions
+- Chapter metadata
+- Chapter media and alt decisions
+- Context notes
+- Chapter actions
+- Registration destination
+- Production SEO metadata
+
+Browser-validation limitation:
+
+- Static audits do not replace browser, responsive, keyboard, screen-reader, browser-history, or assistive-technology validation.
+
 ## Progressive Enhancement
 
 HTML provides the primary experience. CSS provides approved global foundations. Public header, footer, navigation links, page content, and Experience chapter anchors are present in the document before JavaScript runs.
@@ -631,6 +759,8 @@ Section compositions introduce no new JavaScript. `/dev/compositions/` is fully 
 The Home page introduces no Home-specific JavaScript. Home content, links, event details, registration placeholder, header, and footer are present in HTML and remain readable without JavaScript.
 
 The Festival page introduces no Festival-specific JavaScript. Festival content, links, theme treatment, media placeholders, registration placeholder, header, and footer are present in HTML and remain readable without JavaScript.
+
+The Experience page introduces no Experience-specific JavaScript. Chapter navigation, journey anchors, Visit links, registration placeholder, header, and footer are present in HTML and remain usable without JavaScript.
 
 ## Shared Header And Footer
 
@@ -669,13 +799,13 @@ Do not create `yarn.lock`, `pnpm-lock.yaml`, `bun.lock`, or `bun.lockb`.
 Recommended working branch:
 
 ```text
-build/009-7-festival-page
+build/009-8-experience-page
 ```
 
 ## Current Limitations
 
-- Home and Festival are the assembled public pages.
-- Experience and Visit remain placeholders.
+- Home, Festival, and Experience are the assembled public pages.
+- Visit remains a placeholder.
 - Form flows, registration, final media assets, final FAQ copy, and remaining page-level assemblies are not implemented.
 - No production image assets, analytics, registration, backend, CMS, Rive, or animation sequences are included.
 - Font files are not yet present locally.
@@ -691,26 +821,35 @@ build/009-7-festival-page
 4. `feat: implement responsive Festival page`
 5. `test: add Festival page audit`
 6. `docs: document Festival page implementation`
+7. `feat: implement responsive Experience page`
+8. `test: add Experience page audit`
+9. `docs: document Experience page implementation`
 
-## Definition Of Done For 009.7
+## Definition Of Done For 009.8
 
-- Figma Festival sources were inspected in read-only mode.
-- Festival route is assembled.
-- Festival contains one placeholder H1.
-- Required Festival sequence is implemented.
-- Editorial Media is included conditionally.
-- Highlights, Quotation and Reflection, Partners, and additional media sections are absent.
+- Figma Experience sources were inspected in read-only mode.
+- Experience route is assembled.
+- Experience contains one placeholder H1.
+- Required Experience sequence is implemented.
+- Chapter navigation is labelled and native.
+- All seven chapter links exist.
+- All seven chapter IDs and titles exist in approved order.
+- Full Journey uses ordered semantics.
+- Compact step format is preserved.
+- No chapter is hidden.
+- Begin the Journey links to `#chapter-01`.
+- Plan Your Visit links to `/visit/`.
+- Dedicated Registration section is absent.
+- Quotation and Reflection, Highlight Composition, and extra Editorial Media are absent.
 - Existing shared, content, and composition systems are reused.
-- Theme statement uses approved text and is not another H1.
 - Registration remains unresolved and non-misleading.
-- No cultural facts, final organizer copy, final media, or event details have been invented.
-- Home remains assembled.
-- Experience and Visit remain placeholders.
-- Experience anchors remain intact.
-- `npm run festival:check` passes.
+- No chapter copy, programme activity, final organizer copy, final media, or event details have been invented.
+- Home and Festival remain assembled.
+- Visit remains a placeholder.
+- `npm run experience:check` passes.
 - `npm run check` passes.
-- Building Block 009.8 has not started.
+- Building Block 009.9 has not started.
 
 ## Next Building Block
 
-009.8 — Experience Page Implementation
+009.9 — Visit Page Implementation

@@ -170,6 +170,16 @@ record(
   "festival/index.html: approved Festival assembly changed",
 );
 
+const experiencePage = await read("experience/index.html");
+record(
+  experiencePage.includes("The Experience") &&
+    experiencePage.includes(
+      "PLACEHOLDER — FINAL EXPERIENCE H1 REQUIRES ORGANIZER APPROVAL",
+    ) &&
+    experiencePage.includes('id="experience-journey"'),
+  "experience/index.html: approved Experience assembly changed",
+);
+
 const visit = await read("visit/index.html");
 record(
   visit.includes("Plan Your Visit") &&

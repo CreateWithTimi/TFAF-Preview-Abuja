@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 
 const festivalPath = "festival/index.html";
-const placeholderPublicPages = ["experience/index.html", "visit/index.html"];
+const placeholderPublicPages = ["visit/index.html"];
 const developmentPages = [
   "dev/foundations/index.html",
   "dev/components/index.html",
@@ -289,14 +289,22 @@ for (const page of placeholderPublicPages) {
 }
 
 const experiencePage = await read("experience/index.html");
+record(
+  experiencePage.includes(
+    "PLACEHOLDER — FINAL EXPERIENCE H1 REQUIRES ORGANIZER APPROVAL",
+  ) &&
+    experiencePage.includes('id="experience-hero"') &&
+    experiencePage.includes('id="experience-journey"'),
+  "Experience route no longer appears assembled as expected",
+);
 for (const [index, title] of [
-  "01 — Arrival &amp; Cultural Immersion",
-  "02 — Memory Wall",
-  "03 — Centre for Memories",
-  "04 — Theme Conversation",
-  "05 — Clan Wars",
-  "06 — Learn the Dance",
-  "07 — Books &amp; Merchandise",
+  "Arrival &amp; Cultural Immersion",
+  "Memory Wall",
+  "Centre for Memories",
+  "Theme Conversation",
+  "Clan Wars",
+  "Learn the Dance",
+  "Books &amp; Merchandise",
 ].entries()) {
   const id = `chapter-0${index + 1}`;
   record(
