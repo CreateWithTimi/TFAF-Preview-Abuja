@@ -1,0 +1,26 @@
+.home-section .section-header__action {
+  margin-block-start: var(--space-1);
+}
+
+.home-hero .content-metadata-group {
+  max-inline-size: var(--container-content-max);
+}
+
+.home-placeholder-copy {
+  margin: 0;
+  max-inline-size: var(--container-content-max);
+}
+
+.home-section .status-label {
+  justify-self: start;
+}
+
+.composition-registration-cta .status-label {
+  justify-self: center;
+}
+
+@media (max-width: 374px) {
+  .home-section .button {
+    inline-size: 100%;
+  }
+}
