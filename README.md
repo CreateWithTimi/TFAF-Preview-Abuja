@@ -8,7 +8,7 @@ All four public pages are assembled with approved structure and placeholder-gove
 
 ## Current Engineering Phase
 
-009.9 — Visit Page Implementation
+009.10 — Responsive and Interaction Hardening
 
 ## Technology Stack
 
@@ -21,7 +21,7 @@ All four public pages are assembled with approved structure and placeholder-gove
 - Prettier
 - EditorConfig
 
-No React, TypeScript, Tailwind CSS, Sass, CMS, backend, analytics, registration service, or responsive-hardening work is included in this phase.
+No React, TypeScript, Tailwind CSS, Sass, CMS, backend, analytics, registration service, launch-readiness work, or accessibility/browser QA completion is included in this phase.
 
 ## Local Installation
 
@@ -29,7 +29,7 @@ No React, TypeScript, Tailwind CSS, Sass, CMS, backend, analytics, registration 
 npm install
 ```
 
-No environment variables are required for 009.9.
+No environment variables are required for 009.10.
 
 ## Development Commands
 
@@ -48,10 +48,11 @@ npm run home:check
 npm run festival:check
 npm run experience:check
 npm run visit:check
+npm run hardening:check
 npm run check
 ```
 
-`npm run check` runs linting, formatting verification, token validation, shared-component validation, content-component validation, section-composition validation, Home page validation, Festival page validation, Experience page validation, Visit page validation, and the production build.
+`npm run check` runs linting, formatting verification, token validation, shared-component validation, content-component validation, section-composition validation, Home page validation, Festival page validation, Experience page validation, Visit page validation, responsive/interaction hardening validation, and the production build.
 
 ## Route Inventory
 
@@ -69,7 +70,7 @@ Development-only route:
 - `/dev/content-components/` — Development content-components reference
 - `/dev/compositions/` — Development section-compositions reference
 
-All four public routes are assembled. Browser and interaction hardening remains pending.
+All four public routes are assembled. 009.10 adds deterministic static hardening checks and a manual QA protocol. Full browser matrix, assistive-technology validation, 200% zoom, high-contrast review, and real-device QA remain for 009.11.
 
 Development routes are not public festival routes and must not be added to public navigation, footer navigation, sitemap, or public page architecture.
 
@@ -922,8 +923,80 @@ Do not create `yarn.lock`, `pnpm-lock.yaml`, `bun.lock`, or `bun.lockb`.
 Recommended working branch:
 
 ```text
-build/009-9-visit-page
+build/009-10-responsive-interaction-hardening
 ```
+
+## Responsive And Interaction Hardening
+
+009.10 treats the four assembled public pages as one system and hardens the implementation without redesigning page architecture, section order, content ownership, or visual direction.
+
+Responsive source nodes inspected in read-only mode:
+
+- `112:4378` — `008.3 — Tablet and Mobile Page Assembly`
+- `117:7001` — `008.4 — Page-Level Validation and Engineering Handoff`
+
+Viewport matrix for manual QA:
+
+- `1440px`
+- `1280px`
+- `1024px`
+- `769px`
+- `768px`
+- `767px`
+- `376px`
+- `375px`
+- `374px`
+- `321px`
+- `320px`
+
+Coded breakpoint strategy:
+
+- Foundation typography and container tokens change at `768px`, `1024px`, and `1440px` to match the Figma reference widths while remaining fluid between them.
+- Shared split compositions change from single-column to two-column at `768px`, preserving source order and moving only the visual media/content placement where the composition variant calls for it.
+- Larger hero type steps up at `1024px`, keeping the approved hierarchy without shrinking text to force one-line headings.
+- Event-detail and metadata groups increase columns at `768px` and `1024px` where content has enough room.
+- Header navigation currently uses the selected inline-disclosure model: inline links are shown at `768px` and above; the menu toggle and disclosure navigation are used below `768px`. Figma notes this as content-driven; browser QA in 009.11 should confirm no collision near the 769/768/767 boundary.
+- CTA groups become full-width below `374px` to protect labels at the 375/374/321/320 stress widths.
+
+Validation added:
+
+- `npm run hardening:check` performs deterministic static checks for route preservation, current-page states, duplicate IDs, chapter anchors, dead links, speculative registration routes, native FAQ disclosure, no scroll-spy, no sticky header, no root `overflow-x: hidden`, focus outline preservation, reduced-motion rule presence, and development-route leakage.
+- `docs/responsive-interaction-qa.md` provides the manual browser QA protocol for routes, viewport matrix, header, mobile menu, focus, FAQ, no-JavaScript, reduced-motion, console, and asset checks.
+- `tests/fixtures/long-content-stress.md` provides development-only long-content strings for wrapping and overflow stress testing.
+
+Mobile-navigation validation scope:
+
+- Static code verifies the inline-disclosure model remains present in HTML, has `aria-expanded`, `aria-controls`, visible label text, public route links, no Home text link, and current states on public non-Home routes.
+- `navigation.js` keeps repeated initialization guarded, updates `aria-expanded`, changes the visible label between `Open menu` and `Close menu`, closes on Escape, returns focus to the toggle after Escape, and closes after route-link activation.
+- Live keyboard verification remains part of the manual QA protocol because the Codex sandbox may block local server binding.
+
+Chapter-anchor validation scope:
+
+- The Experience route keeps native links to `#chapter-01` through `#chapter-07`.
+- The journey keeps all seven approved IDs and exact titles.
+- `scroll-margin-block-start` is tokenized on chapter targets to support comfortable native fragment positioning with the current static header.
+
+FAQ validation scope:
+
+- Visit FAQ uses native `details` and `summary`.
+- No custom exclusive-accordion JavaScript is implemented.
+- Multiple items may remain open.
+- Summary rows use tokenized touch-target and focus treatment.
+
+Registration placeholder validation scope:
+
+- `Register Interest` remains non-misleading.
+- No `/register/`, dead `href="#"`, fake click behaviour, form, countdown, pricing, scarcity language, or registration backend exists.
+
+No-JavaScript and reduced-motion strategy:
+
+- Public content, navigation, chapter anchors, FAQ disclosures, and footer markup exist in HTML before JavaScript runs.
+- Mobile navigation is available in unenhanced HTML and is collapsed only after JavaScript initializes.
+- Reduced-motion rules remain in the foundation/component layers; no decorative animation or smooth-scroll dependency has been added.
+
+Automated browser-test status:
+
+- Playwright was not added during 009.10. The current environment has previously blocked local server binding with `listen EPERM`, so deterministic static audits remain inside `npm run check` and environment-dependent browser QA is documented separately.
 
 ## Current Limitations
 
@@ -931,7 +1004,8 @@ build/009-9-visit-page
 - Form flows, registration, final media assets, final FAQ copy, and organizer-approved replacement content are not implemented.
 - No production image assets, analytics, registration, backend, CMS, Rive, or animation sequences are included.
 - Font files are not yet present locally.
-- Browser, responsive, and assistive-technology validation remain future QA work.
+- Manual browser, responsive, keyboard, console, and no-JavaScript validation requires a local environment that can bind the Vite dev and preview servers.
+- Comprehensive screen-reader, browser-matrix, 200% zoom, high-contrast, real-device, and assistive-technology validation remain future QA work.
 - Browser server binding may be unavailable in the Codex sandbox; report live-validation limits honestly.
 - Figma property mappings listed as under review have not been converted into a public component API.
 
@@ -949,32 +1023,25 @@ build/009-9-visit-page
 10. `feat: implement responsive Visit page`
 11. `test: add Visit page audit`
 12. `docs: document Visit page implementation`
+13. `fix: harden responsive layouts and interactions`
+14. `test: add responsive interaction hardening audit`
+15. `docs: document responsive interaction QA protocol`
 
-## Definition Of Done For 009.9
+## Definition Of Done For 009.10
 
-- Figma Visit sources were inspected in read-only mode.
-- Visit route is assembled.
-- Visit contains one approved H1.
-- Required Visit sequence is implemented.
-- Event Information uses exactly the four approved values.
-- Visitor Guidance is implemented as practical guidance.
-- Venue Media is included conditionally.
-- FAQ uses native `details`/`summary`.
-- FAQ content remains placeholder-only.
-- Registration CTA is implemented.
-- Register Interest remains unresolved and non-misleading.
-- Closing Composition is implemented.
-- Explore the Experience links to `/experience/`.
-- No secondary CTA section after registration exists.
-- Partners, separate Cultural Context, additional Editorial Media, Highlight Composition, Quotation and Reflection, and Experience Summary are absent.
-- Existing shared, content, and composition systems are reused.
-- Registration remains unresolved and non-misleading.
-- No event details, visitor guidance, FAQ claims, venue facts, final organizer copy, final media, or registration functionality have been invented.
-- Home, Festival, and Experience remain assembled.
-- `npm run visit:check` passes.
+- Responsive Figma sources were inspected in read-only mode.
+- Baseline validation passed before 009.10 edits.
+- All four public pages remain assembled and were reviewed as one static system.
+- Coded breakpoints and responsive expectations are documented.
+- Mobile navigation, current-page states, chapter anchors, native FAQ disclosure, registration placeholders, focus-outline preservation, reduced-motion rules, no-JavaScript strategy, and development-route boundaries are covered by static audit and manual QA protocol.
+- Long-content stress fixtures exist for development-only review.
+- `npm run hardening:check` passes.
+- Every earlier audit still passes.
 - `npm run check` passes.
-- Building Block 009.10 has not started.
+- Browser-dependent verification is documented honestly and remains dependent on local server availability.
+- No redesign occurred.
+- Building Block 009.11 has not started.
 
 ## Next Building Block
 
-009.10 — Responsive and Interaction Hardening
+009.11 — Accessibility and Browser QA

@@ -7,9 +7,36 @@
 }
 
 .accordion__summary {
+  align-items: center;
   cursor: pointer;
+  display: flex;
+  gap: var(--space-1);
   font-weight: var(--font-weight-bold);
+  min-block-size: 44px;
   padding-block: var(--space-2);
+}
+
+.accordion__summary::marker {
+  content: "";
+}
+
+.accordion__summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion__summary::after {
+  block-size: var(--space-1);
+  border-block-end: var(--border-thin) solid currentcolor;
+  border-inline-end: var(--border-thin) solid currentcolor;
+  content: "";
+  flex: 0 0 auto;
+  inline-size: var(--space-1);
+  margin-inline-start: auto;
+  rotate: 45deg;
+}
+
+.accordion__item[open] .accordion__summary::after {
+  rotate: 225deg;
 }
 
 .accordion__summary:focus-visible {
